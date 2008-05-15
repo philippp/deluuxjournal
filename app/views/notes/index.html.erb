@@ -1,0 +1,36 @@
+<div id="blogheader" class="section yui-g">
+  <% if is_owner? %>
+    <div class="editoptions">
+      <%= link_to 'New note', "/#{params[:dl_sig_stub]}/new", {:class => "new"} %>
+    </div>
+  <% end %>
+  <h1>My blog</h1>
+</div>
+<div class="yui-ge">
+  <div class="yui-u first">
+    <% for note in @notes %>
+    <div class="note section">
+      <div class="editoptions">
+        <%= link_to 'show' , "/#{params[:dl_sig_stub]}/show/#{note.id}", {:class => "show"} %>
+        <% if is_owner? %>
+          <%= link_to 'edit' , "/#{params[:dl_sig_stub]}/edit/#{note.id}", {:class => "edit"} %>
+          <%= link_to 'delete' , "/#{params[:dl_sig_stub]}/destroy/#{note.id}", {:class => "destroy"} %>
+        <% end %>
+      </div>
+      <h2 class="title subsection">
+        <%= link_to note.title , "/#{params[:dl_sig_stub]}/show/#{note.id}", {:class => "edit"} %>
+      </h2>
+      <div class="created_at subsection">
+        <weak><%= time_ago_in_words(note.created_at) %> ago.</weak>
+      </div>
+      <div class="text subsection">
+        <%= note.text[0,300] %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="yui-u">
+  </div>
+</div>
+
+

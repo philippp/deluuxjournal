@@ -1,0 +1,471 @@
+/* LAYOUT */
+
+body {
+  background-color: #eee;
+}
+
+#doc, #doc2, #doc3 {
+  background-color: white;
+  padding: 10px 10px 50px 10px;
+}
+
+#hd{
+  margin-bottom:20px;
+}
+
+/* FONTS */
+
+h1 {
+  font-size: 150%;
+}
+
+h2 {
+  font-size: 130%;
+}
+
+h3 {
+  font-size: 110%;
+}
+
+h4 {
+  font-size: 120%;
+}
+
+p {
+  margin: 0.5em 0;
+  padding-bottom: 0.5em;
+}
+
+ul.nobullets {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+ul.nobullets li {
+  list-style: none;
+  margin:0px;
+  padding:0px 10px 0px 0px;
+}
+
+
+.fieldWithErrors {
+  border-left:2px solid #e75c58;
+  padding-left: 2px;
+}
+
+table td,
+table th {
+  padding: 5px;
+}
+
+#flash {
+  padding: 10px;
+  background-color: #ff9;
+  margin: 1em 0;
+}
+
+.warning{
+  padding: 10px;
+  background-color: #ff9;
+  margin: 1em 0;
+}
+#ft{
+  margin-top:20px;
+}
+
+
+html{
+  background-color:#eeeeee;
+  color:#333;
+}
+body{
+  font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+  font-size:11px;
+  text-align:left;
+}
+
+a {
+  text-decoration:none;
+  color:#0000F0;
+}
+
+#doc, #doc2, #doc3, #doc4{
+  padding-top:30px; /* prevent conflict with header */
+}
+
+/*-------------------------------------------
+  Content
+ -------------------------------------------*/
+
+#content h1 {
+  padding-left: 140px;
+}
+
+a {
+  text-decoration:none;
+  color:#0000F0;
+}
+
+#breadcrumb_trail {
+  font-size: 15px;
+}
+
+#assets_list td, th{
+  border:0px;
+  width: 140px;
+}
+.assets{
+  text-align:center;
+}
+.assets .photo td{
+  padding:7px 0px;
+}
+#assets_list .photo_titles td, th{
+  border:0px;
+  width: 140px;
+  padding-bottom:15px;
+  font-size:1.1em;
+}
+#assets_list img{
+  border:1px solid white;
+}
+
+#albums_list{
+  text-align:center;
+}
+#albums_list table{
+  width:100%;
+}
+#albums_list td, th{
+  border:0px;
+  margin:0px;
+  padding:0px;
+}
+#albums_list .album_title{
+  margin:0px;
+}
+#albums_list h2{
+  padding:0px;
+  margin:5px 0px;
+}
+#albums_list .album_description td{
+  padding-bottom:15px;
+}
+
+.gridlayout td{
+  text-align:center;
+  border:0px;
+}
+
+#loginlinks{
+  margin:5px 0px;
+}
+#loginlinks ul,a{
+  padding:0px;
+  margin:0px;
+}
+#loginlinks li{
+  padding-left:0px;
+  padding-right:10px;
+  font-size:1.3em;
+}
+
+div#header{
+  font-size:2em;
+}
+.weak{
+  font-size:85%;
+}
+
+.current a{
+        text-decoration:none;
+}
+
+.themes .theme_thumb{
+  text-align:center;
+}
+
+div.picture_row{
+        clear: both;
+        min-height: 130px;
+}
+
+div.picture{
+        width: 120px;
+        padding-left: 5px;
+        padding-right: 5px;
+        float: left;
+        text-align: center;
+        position: relative;
+        align: center;
+}
+
+div.picture table {
+        height: 180px;
+        width: 130px;
+}
+
+div.picture td {
+        border: 0px;
+        padding: 0px;
+}
+
+td.picture_title {
+        height: 20%;
+        vertical-align: top;
+}
+
+#photos img {
+background:white none repeat scroll 0%;
+border:1px solid #CCCCCC;
+padding:6px;
+}
+
+#photos div{
+padding:3px 2px;
+text-align:center;
+/*vertical-align:middle;*/
+width:150px;
+}
+
+#nextprev{
+}
+
+#doc3{
+        margin:0px;
+}
+
+
+.handle{
+  left:0px;
+}
+
+.link{
+        margin-bottom:20px;
+        margin-left:70px;
+        width:400px;
+}
+
+#static_page_creator input {
+        font-size: 25px;
+}
+
+#static_page_creator p {
+        font-size: 20px;
+        text-align: center;
+}
+
+input#page_title{
+        width: 100%;
+        margin-bottom: 25px;
+}
+
+input#page_create_fp_link {
+        margin-bottom: 5px;
+}
+
+.page_section{
+  clear:both;
+  margin-bottom:20px;
+}
+
+
+#profilepic .photo{
+  width:200px;
+  height:180px;
+}
+.summary_bar h3{
+  width:400px;
+}
+
+/*
+ * USER_ASSETS VIEW CSS FOLLOWS:
+ */
+
+.title {
+             font-weight: bolder;
+             font-size: 20px;
+             text-align: center;
+}
+
+#photo_description span {
+                   font-style: italic;
+}
+
+#photo_description textarea {
+                   width: 90%;
+}
+
+#photo_description form {
+                   padding: 10px;
+                   text-align: center
+}
+
+ul#profileitems {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+ul#profileitems li {
+  list-style: none;
+  margin:0px;
+  margin-bottom:6px;
+  padding:0px 10px 0px 0px;
+}
+
+ul#uploadchoices{
+  margin-left: 0;
+  padding-left: 0;
+  padding-bottom:20px;
+}
+
+ul#uploadchoices li{
+  margin-left: 30px;
+  padding:10px 0px 20px 10px;
+  font-size:1.4em;
+  line-height: 20px
+}
+
+/* attempt at labels */
+#photos .label{
+z-index:10;
+position:relative;
+}
+
+#photos div.label:hover{
+color:red;
+display:block;
+}
+
+/* Auto-complete for person-tagging */
+.owner{
+  width:100%;
+  padding:0px 5px;
+  border-bottom:1px solid #ccc;
+  margin-bottom:10px;
+  text-align:right;
+}
+
+.app{
+  margin-bottom:10px;
+}
+
+.application{
+  margin-top:10px;
+  margin-bottom:20px;
+}
+.steps{
+  margin-left:30px;
+  font-size:14px;
+}
+.steps li{
+  margin-bottom:6px;
+}
+
+.feedtitle{
+  text-align:center;
+}
+
+.toppad{
+  margin-top:10px;
+}
+.editoptions{
+  float:right;
+  font-size:1.2em;
+}
+.editoptions a{
+  margin:0px 3px;
+}
+/* link edit page */
+
+#link{
+  font-size:1.4em;
+}
+.link_edit_link{
+  position:absolute;
+  margin-left:150px;
+}
+.link_destroy_link{
+  position:absolute;
+  margin-left:190px;
+}
+
+/* themes */
+
+h1.section{
+  border-bottom:1px solid gray;
+}
+h2.section{
+  border-bottom:1px solid gray;
+}
+div.section{
+  margin-bottom:30px;
+}
+div.subsection{
+  margin-bottom:10px;
+}
+.subsection h3{
+  font-weight:bold;
+}
+.prompt{
+  display:inline;
+}
+.tabs li{
+  display:inline;
+}
+
+.offset li{
+  margin-left:20px;
+}
+
+#deliciousdesc li{
+  margin-left:20px;
+}
+
+#tumblrdesc li{
+  margin-left:20px;
+}
+
+/* admin */
+
+.admin_only{
+  border:3px solid red;
+  margin-top:30px;
+}
+
+/* generic buttons */
+a.instacreate{
+  text-decoration:underline;
+  background-color:#fee876;
+  padding:8px;
+  border:1px solid #ecc101;
+  color:#994800;
+}
+
+/* front page intro */
+#intro h1{
+  margin-bottom:8px;
+}
+
+/* Friends and Contacts management */
+
+.friends_index h1 {
+   text-align:center;
+   font-size:25px;
+   padding-bottom: 20px;
+}
+
+.friends_index #connection_status {
+   padding-bottom : 20px;
+}
+
+.friends_index #new_friend_link {
+   font-size:20px;
+   text-align:center;
+
+}
+
+.friends_index #friend_of_friend_links {
+   font-size:20px;
+   text-align:center;
+}

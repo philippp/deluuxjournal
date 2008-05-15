@@ -1,0 +1,43 @@
+<div id="blogheader" class="section yui-g">
+  <h1>New note</h1>
+</div>
+<%= error_messages_for :note %>
+
+<% form_for(@note, :url => "create", :html => {:id => "new_note"}) do |f| %>
+<div class="yui-ge">
+  <div class="yui-u first">
+    <p>
+      <%= f.submit "Create", {:id => "topsubmit"} %>
+    </p>
+
+    <p>
+      <%= text_field_tag :title, nil, :style => "width:100%;height:1.4em;font-size:2em;" %>
+    </p>
+
+    <p>
+      <%= text_area_tag :text, nil, :style => "width:100%; height:700px; font-size:1.6em;" %>
+    </p>
+
+    <p>
+      <%= submit_tag( "Create", :onclick => "myEditor.saveHTML();" ) %>
+    </p>
+  </div>
+  <div class="yui-u">
+    <div class="tip subsection">
+      <h3>Tip</h3>
+      <p>You can write a blog here about your friends!</p >
+    </div>
+    <div id="friend_recommend" class="subsection">
+      <h3>Who is in this blog?</h3>
+      <div id="friend_target">
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
+<%= observe_form 'new_note', :frequency => 2, 
+    :url => "/friends/friend_check",
+    :with => "Form.serialize('new_note')" %>
+

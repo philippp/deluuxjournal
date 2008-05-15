@@ -1,0 +1,101 @@
+<div id="blogheader" class="section yui-g">
+  <h1>Edit note</h1>
+</div>
+<%= error_messages_for :note %>
+
+<% form_for(@note, :url => "update", :html => {:id => "new_note"}) do |f| %>
+<div class="yui-ge">
+  <div class="yui-u first">
+    <p>
+      <%= f.submit "Create", {:id => "topsubmit"} %>
+    </p>
+
+    <p>
+      <%= text_field_tag :title, @note.title, :style => "width:100%;height:1.4em;font-size:2em;" %>
+    </p>
+
+    <p>
+      <%= text_area_tag :text, @note.text, :style => "width:100%; height:700px; font-size:1.6em;" %>
+    </p>
+
+    <p>
+      <%= submit_tag( "Create", :onclick => "myEditor.saveHTML();" ) %>
+    </p>
+  </div>
+  <div class="yui-u">
+    <div class="tip subsection">
+      <h3>Tip</h3>
+      <p>You can write a blog here about your friends!</p >
+    </div>
+    <div id="friend_recommend" class="subsection">
+      <h3>Who is in this blog?</h3>
+      <div id="friend_target">
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<!-- Skin CSS file -->
+<link rel="stylesheet" type="text/css" href="/build/assets/skins/sam/skin.css" />
+
+<!-- Utility Dependencies -->
+<script type="text/javascript" src="/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="/build/element/element-beta-min.js"></script>
+
+<!-- Needed for Menus, Buttons and Overlays used in the Toolbar -->
+<script src="/build/container/container_core-min.js"></script>
+<script src="/build/menu/menu-min.js"></script>
+<script src="/build/button/button-beta-min.js"></script>
+
+<!-- Source file for Rich Text Editor-->
+<script src="/build/editor/editor-beta-min.js"></script>
+
+<script>
+    var Dom = YAHOO.util.Dom,
+        Event = YAHOO.util.Event,
+        win = null;
+
+    var myEditor = new YAHOO.widget.Editor('text', {
+       height: '400px',
+       width: '100%',
+       dompath: true, //Turns on the bar at the bottom
+       animate: true //Animates the opening, closing and moving of Editor windows
+    });
+
+    myEditor.on('toolbarLoaded', function() {
+      //When the toolbar is loaded, add a listener to the insertimage button
+      this.toolbar.on('insertimageClick', function() {
+        //Get the selected element
+        var _sel = this._getSelectedElement();
+
+        //If the selected element is an image
+        //do the normal thing so they can manipulate the image
+        if (_sel && _sel.tagName && (_sel.tagName.toLowerCase() == 'img')) {
+          //Do the normal thing here..
+        } else {
+          //They don't have a selected image, open the image browser window
+          win = window.open('/things/page_asset_selector?id_target=text', 'IMAGE_BROWSER',
+                            'left=20,top=20,width=800,height=500,scrollbars=1,status=1'
+                           );
+          if (!win) {
+            //Catch the popup blocker
+            alert('Please disable your popup blocker!!');
+          }
+          //This is important.. Return false here to not fire the rest of the listeners
+          return false;
+        }
+      }, this, true);
+    }, myEditor, true);
+
+    myEditor.on('afterOpenWindow', function() {
+      //When the window opens, disable the url of the image so they can't change it
+      var url = Dom.get('insertimage_url');
+      if (url) {
+        url.disabled = true;
+      }
+    }, myEditor, true);
+
+myEditor.render();
+
+</script>

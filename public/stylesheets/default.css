@@ -1,0 +1,184 @@
+/* turn off weird YUI things */
+body{
+  text-align:left;
+}
+th,td {border:0px}
+
+#doc.yui-ge {
+  width:60em;
+}
+
+.links li{
+  margin:2px 2px 2px 0px;
+  padding:3px 3px 3px 0px;
+  display:inline;
+}
+
+.gridlayout td{
+  text-align:center;
+}
+
+ul.rowed{
+  margin:0px;
+  padding:10px 0px;
+}
+.rowed li{
+  margin:3px 10px 3px 0px;
+  display:inline;
+}
+
+/*delete this*/
+.clearfix:after {
+  clear:both;
+  content:".";
+  display:block;
+  height:0pt;
+  line-height:0pt;
+  visibility:hidden;
+}
+.clearfix {
+}
+html[xmlns] .clearfix {
+  display:block;
+}
+* html .clearfix {
+  height:1%;
+}
+
+/* warnings / flashes */
+.warning p {
+  padding-bottom: 0px;
+}
+
+/* edit in place, like image titles */
+.edit_in_place_box {
+  min-width:54px;
+  min-height:24px;
+  padding:6px 0px;
+  margin-right:10px;
+}
+
+.edit_in_place_box:hover {
+  min-width:54px;
+  min-height:24px;
+  padding:4px 0px;
+  border:2px solid #DDDDDD;
+  background-color: #FFF890;
+}
+
+div.drop_area {
+  background-color: #DDDDDD;
+  background-image: url(/images/album_edit/album_drop_target.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #000000;
+  min-height: 150px;
+}
+
+div.area_label {
+  width: 100%;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.5em;
+  padding-top: 10px;
+}
+
+/* image front page and show */
+#nextprev:after{
+  clear:both;
+}
+.thumb {
+  float:left;
+  width:70px;
+  height:70px;
+  overflow:hidden;
+  background-color:#333333;
+  border:3px solid #bbbbbb;
+}
+
+/* Comment Styling */
+
+.comment {
+  border: 1px solid black;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.comment_title {
+  font-weight: bold;
+}
+
+.comment_author_time {
+  font-style: italic;
+}
+
+#comment_form input {
+  font-size: 15px;
+}
+
+#comment_form input#title {
+  width: 100%;
+}
+
+#comment_form textarea {
+  font-size: 12px;
+  width: 100%;
+}
+
+
+td.asset_title{
+  text-align:center;
+}
+
+.pager li{
+  display:inline;
+  margin:2px;
+  padding:3px;
+}
+
+.pager a{
+  text-decoration:underline;
+}
+.pager{
+  float:right;
+}
+
+.pager .current a{
+  text-decoration: none;
+}
+
+.errorExplanation li{
+  margin-left:15px;
+}
+
+/*
+ * Edit in place for unit title / description (album and asset)
+ */
+
+div.title form.inplaceeditor-form input.editor_field {
+  width: 60%;
+  font-size: 1em;
+}
+
+div.title form.inplaceeditor-form input.editor_ok_button {
+  margin-left: 1em;
+  font-size: 1em;
+}
+
+div.title form.inplaceeditor-form a.editor_cancel_link {
+  margin-left: 1em;
+  font-size: 1em;
+}
+
+/* ASSET DEFAULT CSS FILE START */
+textarea {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+textarea.editor_field {
+  width: 90%;
+}
+/* ASSET DEFAULT CSS FILE END */
+
