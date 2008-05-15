@@ -205,10 +205,31 @@ class FacebookSession
     end
 
     # convert xml object to a regular hash for easy access
-    xml
-    return xml
+    ret_hash = FacebookSession::xml_to_hash( xml.root )
+    return ret_hash
   end
 
+  # Recursive function to turn an Hpricot document tree into a nested hash
+  def self.xml_to_hash(hpricot_element)
+    debugger
+    if hpricot_element.attributes["type"] and hpricot_element.attributes["type"] == "array"
+      to_ret = []
+      hpricot_element.children.each{ |node|
+        to_ret << FacebookSession::xml_elem_to_hash(node)
+      }
+      return to_ret
+    else
+      return FacebookSession::xml_elem_to_hash(node)
+    end
+  end
+
+  def self.xml_elem_to_hash(hpricot_element)
+    node_hash = { }
+    hpricot_element.children.each{ |node_attr|
+      node_hash[node_attr.name] = node_attr.innerText
+    }
+    return node_hash
+  end
 
   private
 
