@@ -211,7 +211,7 @@ class FacebookSession
 
   # Recursive function to turn an Hpricot document tree into a nested hash
   def self.xml_to_hash(hpricot_element)
-    debugger
+
     if hpricot_element.attributes["type"] and hpricot_element.attributes["type"] == "array"
       to_ret = []
       hpricot_element.children.each{ |node|
