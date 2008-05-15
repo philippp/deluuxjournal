@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
 
   around_filter :catch_errors
+  before_filter :create_fb_session
 
   class AccessDenied < StandardError; end
   class AuthenticationError < StandardError; end
