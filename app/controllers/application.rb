@@ -1,11 +1,12 @@
+require "fb/facebook_web_session"
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-  
+
   around_filter :catch_errors
-  
+
   class AccessDenied < StandardError; end
   class AuthenticationError < StandardError; end
 
@@ -29,7 +30,14 @@ class ApplicationController < ActionController::Base
       redirect_to params[:dl_sig_root_loc]
     end
   end
-  
+
+  def create_fb_session
+    @api_key = params[:dl_sig_api_key]
+    @api_secret = DELUUX_API_SECRET
+    @fb_session = RFacebook::FacebookWebSession.new(@api_key, @api_secret)
+    @fb_session.session_key = params[:dl_sig_session_key]
+  end
+
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
   #protect_from_forgery # :secret => '307b8a34c931d02b46ef87ce7449305c'
