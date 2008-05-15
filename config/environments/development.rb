@@ -20,5 +20,5 @@ config.action_mailer.raise_delivery_errors = false
 APP_ID = 6
 DELUUX_LOC = "http://deluux.com/"
 
-#require 'ruby-debug'
-#Debugger.start
+require 'ruby-debug'
+Debugger.start
