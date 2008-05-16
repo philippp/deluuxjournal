@@ -198,3 +198,725 @@ Processing NotesController#index (for 127.0.0.1 at 2008-05-14 14:05:10) [POST]
   [4;35;1mNote Load (0.000990)[0m   [0mSELECT * FROM notes WHERE (user_id = '11' AND user_type = 'deluux') ORDER BY created_at desc[0m
 Rendering notes/index
 Completed in 0.01979 (50 reqs/sec) | Rendering: 0.00589 (29%) | DB: 0.00099 (5%) | 200 OK [http://localhost/notes/]
+
+
+Processing NotesController#index (for 127.0.0.1 at 2008-05-15 16:25:07) [POST]
+  Session ID: 795ad1213bbfca37699766be8d6025d0
+  Parameters: {"dl_sig_time"=>"1210893907.28422", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"index", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"4e35bdb3d7f027de82c45c48bc338096", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+  [4;36;1mNote Load (0.001458)[0m   [0;1mSELECT * FROM notes WHERE (user_id = '11' AND user_type = 'deluux') ORDER BY created_at desc[0m
+Rendering notes/index
+Completed in 0.03343 (29 reqs/sec) | Rendering: 0.00580 (17%) | DB: 0.00146 (4%) | 200 OK [http://localhost/notes/]
+
+
+Processing NotesController#new (for 127.0.0.1 at 2008-05-15 16:25:37) [POST]
+  Session ID: c9297ba5f1031873cc62ac5c2c8f211f
+  Parameters: {"dl_sig_time"=>"1210893937.88533", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal/new", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"new", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"b62be0e5b7f5df1084d6fe3aeee54530", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-05-15 16:47:29) [POST]
+  Session ID: cbe48cd9f0259bbe15d868567f0fae82
+  Parameters: {"dl_sig_time"=>"1210895248.78042", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"index", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"384c304026e61c3c6d43f154a06e87b4", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+
+
+NameError (undefined local variable or method `prot' for NotesController:Class):
+    /app/controllers/notes_controller.rb:87
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:203:in `load_without_new_constant_marking'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:203:in `load_file'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:202:in `load_file'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:94:in `require_or_load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:248:in `load_missing_constant'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:453:in `const_missing'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:465:in `const_missing'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/inflector.rb:257:in `constantize'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/core_ext/string/inflections.rb:148:in `constantize'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1426:in `recognize'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing NotesController#index (for 127.0.0.1 at 2008-05-15 16:51:44) [POST]
+  Session ID: 0cc86dafb89ae93ab59596f79e9f40cb
+  Parameters: {"dl_sig_time"=>"1210895504.42374", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"index", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"9d9ea8b3329b4c3b19b17b5889a2ccd5", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+  [4;36;1mNote Load (0.001219)[0m   [0;1mSELECT * FROM notes WHERE (user_id = '11' AND user_type = 'deluux') ORDER BY created_at desc[0m
+Rendering notes/index
+Completed in 19.28112 (0 reqs/sec) | Rendering: 0.00619 (0%) | DB: 0.00122 (0%) | 200 OK [http://localhost/notes/]
+
+
+Processing NotesController#new (for 127.0.0.1 at 2008-05-15 16:52:15) [POST]
+  Session ID: 59111ea035149811214df5590e09f99a
+  Parameters: {"dl_sig_time"=>"1210895535.88907", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal/new", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"new", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"5d7a251f9fa58461eaa9722bbd2432d2", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+Rendering notes/new
+Completed in 24.32355 (0 reqs/sec) | Rendering: 0.11086 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/notes/new]
+
+
+Processing NotesController#new (for 127.0.0.1 at 2008-05-15 17:19:22) [POST]
+  Session ID: df78cae968fb3ea6e0f24b04cef2e47d
+  Parameters: {"dl_sig_time"=>"1210897162.02308", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal/new", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"new", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"df8cc7026d83d8c7a8016832c5d002da", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+Rendering notes/new
+Completed in 99.46614 (0 reqs/sec) | Rendering: 0.00600 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/notes/new]
+
+
+Processing NotesController#new (for 127.0.0.1 at 2008-05-15 17:21:01) [POST]
+  Session ID: 236372ca71d95ecdcc8584c429189860
+  Parameters: {"dl_sig_time"=>"1210897227.3264", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal/new", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"new", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"a8834549f10f447d9dced1d15bcdbbd1", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+Rendering notes/new
+Completed in 2.43622 (0 reqs/sec) | Rendering: 0.00253 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/notes/new]
+
+
+Processing NotesController#create (for 127.0.0.1 at 2008-05-15 17:47:37) [POST]
+  Session ID: 578b40c0cd26d9d303901bb65fadcf95
+  Parameters: {"friend_select_alex"=>"336", "dl_sig_time"=>"1210898857.31067", "dl_sig_request_method"=>"POST", "commit"=>"Create", "dl_sig_stub"=>"journal/create", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "title"=>">< TITLE!", "text"=>"winnie and alex are going to the beach. alex pfeiffenberger is going too! alex's food is delicious.\r\n>< Can't wait for next time!!!", "dl_sig_locale"=>"en_US", "friend_select_pfeiffenberger"=>"338", "dl_sig_expires"=>"0", "action"=>"create", "friend_select_winnie"=>"656", "friend_set_winnie"=>"0", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "friend_set_pfeiffenbe"=>"0", "dl_sig"=>"784dae845373630262ca91d7996ef4ee", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "friend_set_winn"=>"0", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "friend_set_alex"=>"0", "friend_set_pfeiffenberger"=>"0", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+  [4;36;1mNote Create (0.000852)[0m   [0;1mINSERT INTO notes ("updated_at", "text", "title", "blog_id", "user_type", "user_id", "created_at") VALUES('2008-05-16 00:47:37', 'winnie and alex are going to the beach. alex pfeiffenberger is going too! alex''s food is delicious.
+>< Can''t wait for next time!!!', '>< TITLE!', NULL, 'deluux', 11, '2008-05-16 00:47:37')[0m
+
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.call):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:152:in `respond'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:150:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:150:in `respond'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    /app/controllers/notes_controller.rb:49:in `create'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:725:in `run_before_filters'
+    /app/controllers/application.rb:24:in `catch_errors'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:469:in `send!'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:469:in `call'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:722:in `run_before_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:695:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing NotesController#new (for 127.0.0.1 at 2008-05-15 17:50:39) [POST]
+  Session ID: 8310dddcb19de7af5f0f4b3ce402be98
+  Parameters: {"dl_sig_time"=>"1210899038.13784", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal/new", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"new", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"61092dc1801b90b552c254e15af167ba", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+Rendering notes/new
+Completed in 2.89047 (0 reqs/sec) | Rendering: 0.00540 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/notes/new]
+
+
+Processing NotesController#create (for 127.0.0.1 at 2008-05-15 17:51:46) [POST]
+  Session ID: b287f583c4fe123bd3beeea286aa2228
+  Parameters: {"dl_sig_time"=>"1210899106.91856", "dl_sig_request_method"=>"POST", "commit"=>"Create", "dl_sig_stub"=>"journal/create", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "title"=>">< LACK OF ENCODING ANGERS ME", "text"=>"OMFG!!@\#$ THESE \"GUYS\" need to 'encode' their @@\#@_)%*%_\#@$ RIGHT ><", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"create", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"6bd353507b0c5157ff70e6a6b65388d3", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+  [4;35;1mNote Create (0.000511)[0m   [0mINSERT INTO notes ("updated_at", "text", "title", "blog_id", "user_type", "user_id", "created_at") VALUES('2008-05-16 00:51:46', 'OMFG!!@#$ THESE "GUYS" need to ''encode'' their @@#@_)%*%_#@$ RIGHT ><', '>< LACK OF ENCODING ANGERS ME', NULL, 'deluux', 11, '2008-05-16 00:51:46')[0m
+Redirected to http://phil.notphilatall.com:3000/journal
+Completed in 0.02261 (44 reqs/sec) | DB: 0.00051 (2%) | 302 Found [http://localhost/notes/create]
+
+
+Processing NotesController#index (for 127.0.0.1 at 2008-05-15 17:52:24) [POST]
+  Session ID: faa586f645eccc98acc0ebcf3bda942a
+  Parameters: {"dl_sig_time"=>"1210899144.81727", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"index", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"1b43cfdafdce493fdb42ab1fc34ac7d7", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+  [4;36;1mNote Load (0.019117)[0m   [0;1mSELECT * FROM notes WHERE (user_id = '11' AND user_type = 'deluux') ORDER BY created_at desc[0m
+Rendering notes/index
+Completed in 0.10279 (9 reqs/sec) | Rendering: 0.03489 (33%) | DB: 0.01912 (18%) | 200 OK [http://localhost/notes/]
+
+
+Processing NotesController#edit (for 127.0.0.1 at 2008-05-15 17:52:54) [POST]
+  Session ID: 1d4ba60746cd411cc8b0d40ebc7bc3ff
+  Parameters: {"dl_sig_time"=>"1210899174.55409", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal/edit/2", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"edit", "dl_sig_added"=>"1", "id"=>"2", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"92020c9ac5effb709c86c952f179391e", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+  [4;35;1mNote Load (0.000591)[0m   [0mSELECT * FROM notes WHERE (notes."id" = 2) [0m
+Rendering notes/edit
+Completed in 0.04749 (21 reqs/sec) | Rendering: 0.03435 (72%) | DB: 0.00059 (1%) | 200 OK [http://localhost/notes/edit/2]
+
+
+Processing NotesController#index (for 127.0.0.1 at 2008-05-15 18:08:45) [POST]
+  Session ID: 5945013a2fe3ef055805c23294ea3fd2
+  Parameters: {"dl_sig_time"=>"1210900125.42243", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"index", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"b5c73103dbd13a39507ecc27c7e90b0b", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+  [4;36;1mNote Load (0.001316)[0m   [0;1mSELECT * FROM notes WHERE (user_id = '11' AND user_type = 'deluux') ORDER BY created_at desc[0m
+Rendering notes/index
+Completed in 0.04918 (20 reqs/sec) | Rendering: 0.01046 (21%) | DB: 0.00132 (2%) | 200 OK [http://localhost/notes/]
+
+
+Processing NotesController#new (for 127.0.0.1 at 2008-05-15 18:08:53) [POST]
+  Session ID: dca8e96caa293e3baf9a8f8193a0e435
+  Parameters: {"dl_sig_time"=>"1210900133.40006", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal/new", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"new", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"b023c392f106c53857362b3a0b4fa5af", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+Rendering notes/new
+
+
+ActionView::TemplateError (can't convert nil into String) on line #7 of notes/new.html.erb:
+4: <%= error_messages_for :note %>
+5: 
+6: <% @assets.each do |asset| %>
+7: <%= image_tag asset[:public_thumb] %>
+8: <% end %>
+9: 
+10: <% form_for(@note, :url => "create", :html => {:id => "new_note"}) do |f| %>
+
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/helpers/asset_tag_helper.rb:431:in `extname'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/helpers/asset_tag_helper.rb:431:in `compute_public_path'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/helpers/asset_tag_helper.rb:345:in `path_to_image'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/helpers/asset_tag_helper.rb:385:in `image_tag'
+    app/views/notes/new.html.erb:7:in `_run_erb_47app47views47notes47new46html46erb'
+    app/views/notes/new.html.erb:6:in `each'
+    app/views/notes/new.html.erb:6:in `_run_erb_47app47views47notes47new46html46erb'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:858:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:872:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:270:in `render_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:131:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:131:in `custom'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:152:in `call'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:152:in `respond'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:150:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:150:in `respond'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/notes_controller.rb:30:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:725:in `run_before_filters'
+    app/controllers/application.rb:24:in `catch_errors'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:469:in `send!'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:469:in `call'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:722:in `run_before_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:695:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing NotesController#new (for 127.0.0.1 at 2008-05-15 18:09:26) [POST]
+  Session ID: 6034215e32ab90cc44e0916efd9cd36d
+  Parameters: {"dl_sig_time"=>"1210900166.82642", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal/new", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"new", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"869804d75d708270bd7be4d7a4a5b9c0", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+Rendering notes/new
+
+
+ActionView::TemplateError (can't convert nil into String) on line #8 of notes/new.html.erb:
+5: 
+6: <% @assets.each do |asset| %>
+7: <% debugger %>
+8: <%= image_tag asset[:public_thumb] %>
+9: <% end %>
+10: 
+11: <% form_for(@note, :url => "create", :html => {:id => "new_note"}) do |f| %>
+
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/helpers/asset_tag_helper.rb:431:in `extname'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/helpers/asset_tag_helper.rb:431:in `compute_public_path'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/helpers/asset_tag_helper.rb:345:in `path_to_image'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/helpers/asset_tag_helper.rb:385:in `image_tag'
+    app/views/notes/new.html.erb:8:in `_run_erb_47app47views47notes47new46html46erb'
+    app/views/notes/new.html.erb:6:in `each'
+    app/views/notes/new.html.erb:6:in `_run_erb_47app47views47notes47new46html46erb'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:858:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:872:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:270:in `render_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:131:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:131:in `custom'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:152:in `call'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:152:in `respond'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:150:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:150:in `respond'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/notes_controller.rb:30:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:725:in `run_before_filters'
+    app/controllers/application.rb:24:in `catch_errors'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:469:in `send!'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:469:in `call'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:722:in `run_before_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:695:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing NotesController#new (for 127.0.0.1 at 2008-05-15 18:12:17) [POST]
+  Session ID: 66c0fd132062e4b5da9c4512910e00fa
+  Parameters: {"dl_sig_time"=>"1210900337.4362", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal/new", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"new", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"d2e5631caafb71ef00856df39e46b9fa", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+Rendering notes/new
+Completed in 1.62234 (0 reqs/sec) | Rendering: 0.00722 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/notes/new]
+
+
+Processing NotesController#index (for 127.0.0.1 at 2008-05-16 01:32:15) [POST]
+  Session ID: f6eb175e2a71031da2302a2009b269d5
+  Parameters: {"dl_sig_time"=>"1210926735.53536", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"index", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"f2fd0249a56fe644f525158edb8823db", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+  [4;36;1mNote Load (0.002180)[0m   [0;1mSELECT * FROM notes WHERE (user_id = '11' AND user_type = 'deluux') ORDER BY created_at desc[0m
+Rendering notes/index
+Completed in 0.04052 (24 reqs/sec) | Rendering: 0.01198 (29%) | DB: 0.00218 (5%) | 200 OK [http://localhost/notes/]
+
+
+Processing NotesController#new (for 127.0.0.1 at 2008-05-16 01:32:27) [POST]
+  Session ID: 4df184fc790174d78684ffc39c5220a5
+  Parameters: {"dl_sig_time"=>"1210926747.72148", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal/new", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"new", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"9d36f40d055d5e1ae26833a2be49bb70", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+Rendering notes/new
+Completed in 4.77319 (0 reqs/sec) | Rendering: 0.00858 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/notes/new]
+
+
+Processing NotesController#create (for 127.0.0.1 at 2008-05-16 01:33:30) [POST]
+  Session ID: 5767f1842491a117cb5a73a17a43115f
+  Parameters: {"dl_sig_time"=>"1210926809.972", "dl_sig_request_method"=>"POST", "commit"=>"Create", "lj_login"=>"piq", "dl_sig_stub"=>"journal/create", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "title"=>"Test Post", "text"=>"Test Body!", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"create", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"462e5ace8ff706dda6847022735879bf", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "lj_password"=>"nineteen81", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+
+
+NameError (uninitialized constant NotesController::LJSession):
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:478:in `const_missing'
+    /app/controllers/notes_controller.rb:88:in `create_crosspost'
+    /app/controllers/notes_controller.rb:46:in `create'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:725:in `run_before_filters'
+    /app/controllers/application.rb:24:in `catch_errors'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:469:in `send!'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:469:in `call'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:722:in `run_before_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:695:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing NotesController#index (for 127.0.0.1 at 2008-05-16 01:36:12) [POST]
+  Session ID: 1fd4ae62e52b63f06e8f906d0e433f51
+  Parameters: {"dl_sig_time"=>"1210926972.31404", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"index", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"ca202c4142702e5b755d4a18019b2cd3", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+  [4;35;1mNote Load (0.001314)[0m   [0mSELECT * FROM notes WHERE (user_id = '11' AND user_type = 'deluux') ORDER BY created_at desc[0m
+Rendering notes/index
+Completed in 0.03438 (29 reqs/sec) | Rendering: 0.00672 (19%) | DB: 0.00131 (3%) | 200 OK [http://localhost/notes/]
+
+
+Processing NotesController#new (for 127.0.0.1 at 2008-05-16 01:36:25) [POST]
+  Session ID: 3055b2b1f42c39f3a43106bf86528303
+  Parameters: {"dl_sig_time"=>"1210926984.59908", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal/new", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"new", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"a64b28f1438a1c3d78a44df91ef3bd29", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+Rendering notes/new
+Completed in 1.94048 (0 reqs/sec) | Rendering: 0.00911 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/notes/new]
+
+
+Processing NotesController#create (for 127.0.0.1 at 2008-05-16 01:42:18) [POST]
+  Session ID: c8593b58945e89854d09ff8f4ac97c47
+  Parameters: {"dl_sig_time"=>"1210927337.82477", "dl_sig_request_method"=>"POST", "commit"=>"Create", "lj_login"=>"piq", "dl_sig_stub"=>"journal/create", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "title"=>"Test Subject", "text"=>"Test Body", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"create", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"cc7089addab81d16aafbae9d1cab484b", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "lj_password"=>"nineteen81", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+
+
+NameError (undefined local variable or method `user' for #<LJSession:0xb7bafc40>):
+    /lib/ljsession.rb:18:in `post_entry'
+    /app/controllers/notes_controller.rb:90:in `create_crosspost'
+    /app/controllers/notes_controller.rb:47:in `create'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:725:in `run_before_filters'
+    /app/controllers/application.rb:24:in `catch_errors'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:469:in `send!'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:469:in `call'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:722:in `run_before_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:695:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing NotesController#create (for 127.0.0.1 at 2008-05-16 01:42:29) [POST]
+  Session ID: 648da21bf80373eb30eb9e870bf297c2
+  Parameters: {"dl_sig_time"=>"1210927349.38968", "dl_sig_request_method"=>"POST", "commit"=>"Create", "lj_login"=>"piq", "dl_sig_stub"=>"journal/create", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "title"=>"Test Subject", "text"=>"Test Body", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"create", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"8bb2ef0e50ef17bcae6efd05663d5bdc", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "lj_password"=>"nineteen81", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+
+
+NameError (undefined local variable or method `user' for #<LJSession:0xb749dbb4>):
+    /lib/ljsession.rb:18:in `post_entry'
+    /app/controllers/notes_controller.rb:90:in `create_crosspost'
+    /app/controllers/notes_controller.rb:47:in `create'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:725:in `run_before_filters'
+    /app/controllers/application.rb:24:in `catch_errors'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:469:in `send!'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:469:in `call'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:722:in `run_before_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:695:in `call_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing NotesController#new (for 127.0.0.1 at 2008-05-16 01:43:15) [POST]
+  Session ID: c44d39ad9e5305a99d5c7dbbf2dedebd
+  Parameters: {"dl_sig_time"=>"1210927395.48559", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal/new", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"new", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"a2a1d713ee13b6f9cafa64dfececf2fa", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+Rendering notes/new
+Completed in 2.14499 (0 reqs/sec) | Rendering: 0.00833 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/notes/new]
+
+
+Processing NotesController#create (for 127.0.0.1 at 2008-05-16 01:44:18) [POST]
+  Session ID: b3bc9d58cc916bcec4b3285ad8c96bd3
+  Parameters: {"dl_sig_time"=>"1210927458.05884", "dl_sig_request_method"=>"POST", "commit"=>"Create", "lj_login"=>"piq", "dl_sig_stub"=>"journal/create", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "title"=>"TestSubject", "text"=>"TestBody", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"create", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"d0157c26b5cb55f39c908b91f4990da0", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "lj_password"=>"nineteen81", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+  [4;36;1mNote Create (0.031004)[0m   [0;1mINSERT INTO notes ("updated_at", "text", "title", "blog_id", "user_type", "user_id", "created_at") VALUES('2008-05-16 08:44:19', 'TestBody', 'TestSubject', NULL, 'deluux', 11, '2008-05-16 08:44:19')[0m
+Redirected to http://phil.notphilatall.com:3000/journal
+Completed in 1.64636 (0 reqs/sec) | DB: 0.03100 (1%) | 302 Found [http://localhost/notes/create]
+
+
+Processing NotesController#index (for 127.0.0.1 at 2008-05-16 01:44:52) [POST]
+  Session ID: f14e0c164cec623205ea6724c6a48c10
+  Parameters: {"dl_sig_time"=>"1210927491.8583", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"index", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"1c4213fca034a6e6828acf639a76b1b1", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+  [4;35;1mNote Load (0.001679)[0m   [0mSELECT * FROM notes WHERE (user_id = '11' AND user_type = 'deluux') ORDER BY created_at desc[0m
+Rendering notes/index
+Completed in 0.04690 (21 reqs/sec) | Rendering: 0.01859 (39%) | DB: 0.00168 (3%) | 200 OK [http://localhost/notes/]
+
+
+Processing NotesController#index (for 127.0.0.1 at 2008-05-16 02:53:24) [POST]
+  Session ID: 8808b8ed7ad2e0b0d954ba228c82f9ad
+  Parameters: {"dl_sig_time"=>"1210931603.98707", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"index", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"6180209794d24d94dabd77a2a3823945", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+  [4;36;1mNote Load (0.001601)[0m   [0;1mSELECT * FROM notes WHERE (user_id = '11' AND user_type = 'deluux') ORDER BY created_at desc[0m
+Rendering notes/index
+Completed in 0.05470 (18 reqs/sec) | Rendering: 0.00723 (13%) | DB: 0.00160 (2%) | 200 OK [http://localhost/notes/]
+
+
+Processing NotesController#new (for 127.0.0.1 at 2008-05-16 02:53:48) [POST]
+  Session ID: 9f9d5bb4beb8e96dcd315ae14755e4a8
+  Parameters: {"dl_sig_time"=>"1210931628.95952", "dl_sig_request_method"=>"GET", "dl_sig_stub"=>"journal/new", "dl_sig_root_loc"=>"http://phil.notphilatall.com:3000/journal", "dl_sig_locale"=>"en_US", "dl_sig_expires"=>"0", "action"=>"new", "dl_sig_added"=>"1", "dl_sig_in_canvas"=>"1", "controller"=>"notes", "dl_sig"=>"f42fd1d69cb68d90aa95c05bd8f7fb14", "dl_sig_position_fix"=>"1", "dl_sig_profile_update_time"=>"1202965265", "dl_sig_friends"=>"1", "dl_sig_user"=>"11", "dl_sig_app_stub"=>"journal", "dl_sig_session_key"=>"UrZljHwV7UZO1Hw3k7fsIMLE", "dl_sig_api_key"=>"Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO", "dl_sig_owner_user"=>"11"}
+Rendering notes/new
+Completed in 1.72783 (0 reqs/sec) | Rendering: 0.00789 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/notes/new]

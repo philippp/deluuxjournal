@@ -1,4 +1,4 @@
-require 'ruby-debug'
+ require 'ruby-debug'
 require 'fb/facebook_web_session'
 Debugger.start
 @api_key = "Qnmqv3ATOBbXE6hI0LIWCZWz6BD7YvXO"
@@ -10,7 +10,7 @@ fi = @fb.friends_index
 assets = []
 fi.root.children.each{ |asset|
   # HACK:
-  # Colony is returning terminated space-only strings 
+  # Colony is returning terminated space-only strings
   # between asset nodes
   # TODO: filter xml output
   next unless asset.class == Hpricot::Elem and asset.name == "asset"
