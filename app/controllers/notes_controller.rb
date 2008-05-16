@@ -1,9 +1,9 @@
-require "fb/facebook_web_session"
+require 'ljsession'
 
 class NotesController < ApplicationController
 
   layout nil
-  
+
   before_filter :check_auth, :only => [ :new, :edit, :update, :destroy ]
 
   def index
@@ -27,7 +27,7 @@ class NotesController < ApplicationController
 
   def new
     @note = Note.new
-
+    @assets = @fb_session.user_assets_index
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @note }
@@ -44,9 +44,9 @@ class NotesController < ApplicationController
     @note.title = params[:title]
     @note.user_id = params[:dl_sig_user]
     @note.user_type = "deluux"
-    
+    create_crosspost
     friends_found = params.select{|k,v| v if k[0,14] == "friend_select_" and v != ""}
-    
+
     respond_to do |format|
       if @note.save
         flash[:notice] = 'Note was successfully created.'
@@ -81,4 +81,14 @@ class NotesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  protected
+
+  def create_crosspost
+    if params[:lj_login] and params[:lj_password]
+      ljs = LJSession.new(params[:lj_login], params[:lj_password])
+      ljs.post_entry(params[:title], params[:text])
+    end
+  end
+
 end

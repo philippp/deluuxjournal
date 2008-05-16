@@ -1,7 +1,11 @@
 <div id="blogheader" class="section yui-g">
-  <h1>New note</h1>
+  <h1>New Entry</h1>
 </div>
 <%= error_messages_for :note %>
+
+<% @assets.each do |asset| %>
+<%= image_tag asset["public_thumb"] %>
+<% end %>
 
 <% form_for(@note, :url => "create", :html => {:id => "new_note"}) do |f| %>
 <div class="yui-ge">
@@ -19,16 +23,22 @@
     </p>
 
     <p>
-      <%= submit_tag( "Create", :onclick => "myEditor.saveHTML();" ) %>
+      <%= submit_tag( "Create" ) %>
+    </p>
+
+    <p>
+      <h3>Cross-post to LiveJournal</h3>
+      Login: <%= text_field_tag :lj_login %><br/>
+      Password: <%= text_field_tag :lj_password %>
     </p>
   </div>
   <div class="yui-u">
     <div class="tip subsection">
       <h3>Tip</h3>
-      <p>You can write a blog here about your friends!</p >
+      <p>Select friends to tell them about this blog entry!</p >
     </div>
     <div id="friend_recommend" class="subsection">
-      <h3>Who is in this blog?</h3>
+      <h3>Tell these friends:</h3>
       <div id="friend_target">
       </div>
     </div>
@@ -37,7 +47,7 @@
 <% end %>
 
 
-<%= observe_form 'new_note', :frequency => 2, 
+<%= observe_form 'new_note', :frequency => 2,
     :url => "/friends/friend_check",
     :with => "Form.serialize('new_note')" %>
 
