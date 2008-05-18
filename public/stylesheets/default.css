@@ -1,69 +1,96 @@
-/* turn off weird YUI things */
 body{
-  text-align:left;
+  text-align:left; /* turn off weird YUI things */
+  font-size: 62.5%;
 }
-th,td {border:0px}
+th,td {border:0em}
 
 #doc.yui-ge {
   width:60em;
 }
+p{
+  font-size:1.2em;
+}
 
 .links li{
-  margin:2px 2px 2px 0px;
-  padding:3px 3px 3px 0px;
+  margin:0.2em 0.2em 0.2em 0em;
+  padding:0.3em 0.3em 0.3em 0em;
   display:inline;
 }
 
+table.gridlayout{
+  width:100%;
+}
 .gridlayout td{
   text-align:center;
 }
 
 ul.rowed{
-  margin:0px;
-  padding:10px 0px;
+  margin:0em;
+  padding:1em 0em;
 }
 .rowed li{
-  margin:3px 10px 3px 0px;
+  margin:0.3em 1em 0.3em 0em;
   display:inline;
 }
+ul.nobullets {
+  margin-left: 0;
+  padding-left: 0;
+}
+ul.nobullets li {
+  list-style: none;
+  margin:0em;
+  padding:0em 1em 0em 0em;
+}
+
 
 /*delete this*/
 .clearfix:after {
-  clear:both;
-  content:".";
-  display:block;
-  height:0pt;
-  line-height:0pt;
-  visibility:hidden;
+clear:both;
+content:".";
+display:block;
+height:0pt;
+line-height:0pt;
+visibility:hidden;
 }
 .clearfix {
+display:inline-block;
 }
 html[xmlns] .clearfix {
-  display:block;
+display:block;
 }
 * html .clearfix {
-  height:1%;
+height:1%;
 }
 
 /* warnings / flashes */
 .warning p {
-  padding-bottom: 0px;
+  padding-bottom: 0em;
 }
 
 /* edit in place, like image titles */
 .edit_in_place_box {
-  min-width:54px;
-  min-height:24px;
-  padding:6px 0px;
-  margin-right:10px;
+  width: 100%;
+  min-width:5.4em;
+  min-height:2.4em;
+  padding:0.6em 0.6em; /* Please do not change this without testing, it fixes pagejumping */
+  margin: 0.1em;
 }
 
 .edit_in_place_box:hover {
-  min-width:54px;
-  min-height:24px;
-  padding:4px 0px;
-  border:2px solid #DDDDDD;
-  background-color: #FFF890;
+  min-width:5.4em;
+  min-height:2.4em;
+  padding:0.4em 0.4em 0.4em 0.4em;
+  border:0.2em solid #DDDDDD;
+  background-color: #FFFFB7;
+}
+
+/* for public viewing, provides same spacing as edit in place box for consistency */
+.edit_in_place_spacing {
+  margin:0.1em;
+  min-height:2.4em;
+  min-width:5.4em;
+  padding:0.6em;
+  width:100%;
 }
 
 div.drop_area {
@@ -71,8 +98,8 @@ div.drop_area {
   background-image: url(/images/album_edit/album_drop_target.gif);
   background-repeat: no-repeat;
   background-position: center;
-  border: 2px solid #000000;
-  min-height: 150px;
+  border: 0.2em solid #000000;
+  min-height: 15em;
 }
 
 div.area_label {
@@ -80,29 +107,69 @@ div.area_label {
   text-align: center;
   font-weight: bolder;
   font-size: 1.5em;
-  padding-top: 10px;
+  padding-top: 1em;
 }
 
 /* image front page and show */
 #nextprev:after{
   clear:both;
 }
-.thumb {
+
+div.thumb {
   float:left;
-  width:70px;
-  height:70px;
+  width:7.0em;
+  height:7.0em;
   overflow:hidden;
   background-color:#333333;
-  border:3px solid #bbbbbb;
+  border:.4em solid white;
+}
+
+#friends div.thumb {
+  float:left;
+  width:7.0em;
+  height:7.0em;
+  overflow:hidden;
+  background-color:#333333;
+  border:.4em solid white;
+}
+
+#nextprev div.thumb {
+  float:left;
+  width:7.0em;
+  height:7.0em;
+  overflow:hidden;
+  background-color:#333333;
+  border:.4em solid white;
+}
+
+.editoptions{
+  float:right;
+  font-size:1.2em;
+}
+.editoptions a{
+  margin:0em 0.3em;
+}
+
+ul.suboptions{
+  margin-top:1em;
+}
+ul.suboptions li{
+  list-style: none;
+  display:inline;
+}
+ul.suboptions a{
+  padding-top:1em;
+  padding-right:1em;
+  font-size:1.2em;
 }
 
 /* Comment Styling */
 
 .comment {
-  border: 1px solid black;
-  padding: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  padding: 0.7em 0em;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  border-bottom:1px solid #F0F0F0;
 }
 
 .comment_title {
@@ -111,10 +178,18 @@ div.area_label {
 
 .comment_author_time {
   font-style: italic;
+  width:9em;
+  float:left;
+}
+
+.comment_contents{
+  float:left;
+  position:absolute;
+  margin-left:11em;
 }
 
 #comment_form input {
-  font-size: 15px;
+  font-size: 1.5em;
 }
 
 #comment_form input#title {
@@ -122,8 +197,7 @@ div.area_label {
 }
 
 #comment_form textarea {
-  font-size: 12px;
-  width: 100%;
+  width: 50em;
 }
 
 
@@ -133,8 +207,8 @@ td.asset_title{
 
 .pager li{
   display:inline;
-  margin:2px;
-  padding:3px;
+  margin:0.2em;
+  padding:0.3em;
 }
 
 .pager a{
@@ -149,7 +223,7 @@ td.asset_title{
 }
 
 .errorExplanation li{
-  margin-left:15px;
+  margin-left:1.5em;
 }
 
 /*
@@ -173,12 +247,30 @@ div.title form.inplaceeditor-form a.editor_cancel_link {
 
 /* ASSET DEFAULT CSS FILE START */
 textarea {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 textarea.editor_field {
-  width: 90%;
+  width: 99%;
 }
 /* ASSET DEFAULT CSS FILE END */
+
+.label {
+  position: absolute;
+  background-color:white;
+  color:black;
+  padding:0.3em;
+}
+
+/* forcing colors for (ex: black) themes, it was worse before */
+.tip_section{
+  background-color:white;
+  padding:3px;
+}
+
+.rightheader{
+  float:right;
+}
+
 

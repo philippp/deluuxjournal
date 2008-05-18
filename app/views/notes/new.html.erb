@@ -1,53 +1,191 @@
-<div id="blogheader" class="section yui-g">
-  <h1>New Entry</h1>
-</div>
 <%= error_messages_for :note %>
 
-<% @assets.each do |asset| %>
-<%= image_tag asset["public_thumb"] %>
-<% end %>
+<!-- Generate JS Arrays of Image Assets and Friends -->
+<!-- myImageList = [ [title, filename], ...] -->
+<!-- myFriendList = [ [friend_id, "friend_name", [friend_regex_fullname, friend_regex_partialname, ...]], ...] -->
+<% rb_array_assets = []; rb_array_friends = []; rb_list_friends_decl = "" %>
+<!-- Asset array -->
+<% @assets.each do |asset|
+     if asset["title"] and asset["title"].length > 0
+      rb_array_assets << "[\"#{asset["title"]}\", \"#{asset["public_filename"]}\"]"
+     else
+      rb_array_assets << "[\"#{asset["public_filename"].split("/").last}\", \"#{asset["public_filename"]}\"]"
+     end
+   end %>
+<!-- Friend array -->
+<% ignore_words = ["the", "new", "mail", "admin", "root", "founders", "help"] %>
+
+<% @friends.each do |friend|
+   friend_name_array = ["new RegExp(\"\s#{friend["name"]}\s\", \"i\")"]
+   friend["name"].split(" ").each{|fn|
+     friend_name_array << "new RegExp(\"\s#{fn}\s\", \"i\")" unless ( fn.length < 3 or ignore_words.include? fn.downcase )
+   }
+   rb_list_friends_decl << "var friend_#{friend["id"]} = new Array(#{friend["id"]}, \"#{friend["name"]}\", new Array(#{friend_name_array.join(",")}));\n"
+   rb_array_friends << "friend_#{friend["id"]}"
+   end %>
+
+<% js_array_assets = rb_array_assets.join(","); js_array_friends = rb_array_friends.join(","); %>
+<script type="text/javascript">
+  <%= rb_list_friends_decl %>
+  var myImageList = new Array( <%= js_array_assets %> );
+  var myFriendList = new Array( <%= js_array_friends %> );
+
+  var get_friend_by_id = function(friend_id){
+    for( var i = 0; i < myFriendList.length; i++ ){
+       if( myFriendList[i][0] == friend_id ){ return myFriendList[i]; };
+    }
+  }
+
+</script>
+
+<!-- Should go in outside file -->
+<script type="text/javascript">
+
+var included_friends = []; // Structure ["matched_text", [friend_1, friend_2, ...]]
+var friend_notify_list = [];
+
+/**
+ * Checks a body of text (to_check) for friends that have been mentioned in it.
+ * Calls add_friend and update_friend_list
+ * @param to_check content in which friends may be mentioned
+ * @param list_target_id Element ID, select elements are rendered into here
+ */
+var check_friends = function(to_check, list_target_id){
+    included_friends = [];
+    for(var i = 0; i < myFriendList.length; i++ ){ //Each friend
+       friend = myFriendList[i];
+       for(var j = 0; j < friend[2].length; j++ ){ // Each RegEx for this friend
+         var text_match = to_check.match(friend[2][j])
+         if( text_match ){
+           add_friend( friend, text_match[0] );
+           break; // Skip friend's remaining RegExs
+         }
+       }
+    }
+   update_friend_list( list_target_id );
+  }
+
+/**
+ * Adds the Friend to the list of friends included in the post. We also track the matched
+ * text to group Friends that have been matched ambiguously.
+ */
+var add_friend = function(friend, matched_string ){
+    for(var i=0; i < included_friends.length; i++ ){
+       if( included_friends[i][0] == matched_string ){
+          included_friends[i][1].push(friend);
+          return included_friends;
+       }
+    }
+    friend_match = new Array(matched_string, [friend]);
+    included_friends.push( friend_match );
+    return included_friends;
+}
+
+var update_friend_list = function(target_id){
+
+  if( included_friends.length > 0 ){
+    $(target_id).innerHTML = "<h4><b>Did you mention...</b></h4><ul>";
+    for( var i = 0; i < included_friends.length; i++){
+      if( included_friends[i][1].length > 1 ){
+        $(target_id).innerHTML += "<li>"+included_friends[i][0]+"<ul>";
+        for( var j = 0; j < included_friends[i][1].length; j++){
+          $(target_id).innerHTML += "<li class='second_level'><a href='#' onclick='add_friend_notify("+included_friends[i][1][j][0]+");'>"+included_friends[i][1][j][1]+"</a></li>";
+        }
+        $(target_id).innerHTML += "</ul></li>";
+      }else{
+        $(target_id).innerHTML += "<li><a href='#' onclick='add_friend_notify("+included_friends[i][1][0][0]+");'>"+included_friends[i][1][0][1]+"</a></li>";
+      }
+    }//for( var i = 0; i < included_friends.length; i++)
+    $(target_id).innerHTML += "</ul><i>Click and tell!</i>";
+  }else{
+    $(target_id).innerHTML = "";
+  }
+}
+
+var add_friend_notify = function(friend_id){
+  friend = get_friend_by_id( friend_id );
+  friend_notify_list.push( friend );
+  update_friend_notify_field();
+}
+
+var remove_friend_notify = function( friend_id ){
+  for( var i = 0; i < friend_notify_list.length; i++ ){
+    if( friend_notify_list[i][0] == friend_id ){ friend_notify_list.splice(i,1); };
+  }
+  update_friend_notify_field();
+}
+
+var update_friend_notify_field = function(){
+  $("friend_notify_target").innerHTML = "";
+  for( var i = 0; i < friend_notify_list.length; i++ ){
+    var friend = friend_notify_list[i];
+    $("friend_notify_target").innerHTML += "<p>"+friend[1]+"&nbsp;<a href='#' onclick='remove_friend_notify("+friend[0]+");'>[X]</a></p>"
+  }
+  $("notify_id_list").value = friend_notify_list.join();
+
+}
+
+
+  setInterval("check_friends(tinyMCE.getInstanceById('text').getDoc().body.innerHTML, 'friend_target');", 5000);
+</script>
+
+
 
 <% form_for(@note, :url => "create", :html => {:id => "new_note"}) do |f| %>
 <div class="yui-ge">
   <div class="yui-u first">
+
     <p>
-      <%= f.submit "Create", {:id => "topsubmit"} %>
+      <%= text_field_tag :title, nil, :style => "width:100%;height:1.4em;font-size:2em;", :class => "text_field" %>
     </p>
 
     <p>
-      <%= text_field_tag :title, nil, :style => "width:100%;height:1.4em;font-size:2em;" %>
+      <%= text_area_tag :text, nil, :style => "width:100%; height:600px; font-size:1.6em;" %>
     </p>
 
-    <p>
-      <%= text_area_tag :text, nil, :style => "width:100%; height:700px; font-size:1.6em;" %>
+    <%= hidden_field_tag :notify_id_list %>
+
+    <% params.each{|k,v| %>
+      <%= hidden_field_tag( k, v ) if k[0..2]=="dl_" %>
+    <% } %>
+
+    <p style="font-size: 1.5em; text-align: center; width: 100%;">
+      <%= submit_tag( "Create" ) %> or <%= app_link_to( "Cancel", :action => "index" ) %>
     </p>
 
-    <p>
-      <%= submit_tag( "Create" ) %>
-    </p>
-
-    <p>
-      <h3>Cross-post to LiveJournal</h3>
-      Login: <%= text_field_tag :lj_login %><br/>
-      Password: <%= text_field_tag :lj_password %>
-    </p>
   </div>
+  <style>
+  div#friend_target li {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+  div#friend_target li.second_level{
+    list-style-type: circle;
+    list-style-position: inside;
+    padding-left: 2em;
+  }
+
+  </style>
   <div class="yui-u">
-    <div class="tip subsection">
-      <h3>Tip</h3>
-      <p>Select friends to tell them about this blog entry!</p >
-    </div>
     <div id="friend_recommend" class="subsection">
-      <h3>Tell these friends:</h3>
       <div id="friend_target">
       </div>
     </div>
+    <div id="friend_notify" class="subsection">
+      <h4><b>You're telling:</b></h4>
+      <div id="friend_notify_target">
+       <i>Nobody yet!</i>
+      </div>
+    </div>
+
+    <div id="lj_crosspost" class="subsection">
+      <h4><b>Crosspost to LiveJournal:</b></h4>
+      <div id="lj_fields">
+      <div style="width: 5em; float: left; text-align: right;">Login:</div><%= text_field_tag :lj_login, nil, :class => "text_field", :style => "width: 7em;" %><br/>
+      <div style="width: 5em; float: left; text-align: right;">Password:</div><%= password_field_tag :lj_password, nil, :class => "password_field", :style => "width: 7em;" %>
+      </div>
+    </div>
+
   </div>
 </div>
 <% end %>
-
-
-<%= observe_form 'new_note', :frequency => 2,
-    :url => "/friends/friend_check",
-    :with => "Form.serialize('new_note')" %>
-

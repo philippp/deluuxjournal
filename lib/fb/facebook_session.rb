@@ -200,7 +200,6 @@ class FacebookSession
       else
         raise RemoteException, @last_error unless @suppress_exceptions == true
       end
-
       return nil
     end
 
@@ -211,7 +210,6 @@ class FacebookSession
 
   # Recursive function to turn an Hpricot document tree into a nested hash
   def self.xml_to_hash(hpricot_element)
-
     if hpricot_element.attributes["type"] and hpricot_element.attributes["type"] == "array"
       to_ret = []
       hpricot_element.children.each{ |node|
@@ -219,7 +217,7 @@ class FacebookSession
       }
       return to_ret
     else
-      return FacebookSession::xml_elem_to_hash(node)
+      return FacebookSession::xml_elem_to_hash(hpricot_element)
     end
   end
 

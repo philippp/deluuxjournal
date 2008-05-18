@@ -11,6 +11,7 @@ RAILS_GEM_VERSION = '2.0.2'
 require File.join(File.dirname(__FILE__), 'boot')
 
 DELUUX_API_SECRET = "QiYnRMVBCzrinKr0nR5mYPu0AiSG0MXT"
+require 'url_helper_monkeypatch'
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.

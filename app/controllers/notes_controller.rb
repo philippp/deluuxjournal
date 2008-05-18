@@ -2,8 +2,6 @@ require 'ljsession'
 
 class NotesController < ApplicationController
 
-  layout nil
-
   before_filter :check_auth, :only => [ :new, :edit, :update, :destroy ]
 
   def index
@@ -28,6 +26,7 @@ class NotesController < ApplicationController
   def new
     @note = Note.new
     @assets = @fb_session.user_assets_index
+    @friends = @fb_session.friends_index
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @note }
@@ -45,12 +44,13 @@ class NotesController < ApplicationController
     @note.user_id = params[:dl_sig_user]
     @note.user_type = "deluux"
     create_crosspost
-    friends_found = params.select{|k,v| v if k[0,14] == "friend_select_" and v != ""}
 
     respond_to do |format|
       if @note.save
-        flash[:notice] = 'Note was successfully created.'
-        format.html { redirect_to params[:dl_sig_root_loc] }
+        flash[:notice] = "Added \"#{@note.title}\"!"
+        format.html {
+          app_redirect_to :action => "index"
+        }
       else
         format.html { render :action => "new" }
       end
@@ -62,8 +62,8 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.update_attributes(params[:note])
-        flash[:notice] = 'Note was successfully updated.'
-        format.html { redirect_to params[:dl_sig_root_loc] }
+        flash[:notice] = "Updated \"#{@note.title}\"!"
+        format.html { app_redirect_to :action => "index" }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -85,7 +85,7 @@ class NotesController < ApplicationController
   protected
 
   def create_crosspost
-    if params[:lj_login] and params[:lj_password]
+    if params[:lj_login].length > 0 and params[:lj_password].length > 0
       ljs = LJSession.new(params[:lj_login], params[:lj_password])
       ljs.post_entry(params[:title], params[:text])
     end

@@ -39,6 +39,15 @@ class ApplicationController < ActionController::Base
     @fb_session.session_key = params[:dl_sig_session_key]
   end
 
+  def app_redirect_to(options = {}, response_status = {})
+      params.each{ |k,v|
+        if k[0..2] == "dl_"
+          options[k] = v
+        end
+      }
+    redirect_to(options, response_status)
+  end
+
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
   #protect_from_forgery # :secret => '307b8a34c931d02b46ef87ce7449305c'

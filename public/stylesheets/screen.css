@@ -1,34 +1,29 @@
 /* LAYOUT */
-
-body {
-  background-color: #eee;
-}
-
 #doc, #doc2, #doc3 {
   background-color: white;
-  padding: 10px 10px 50px 10px;
+  padding: 1.0em 1.0em 5.0em 1.0em;
 }
 
 #hd{
-  margin-bottom:20px;
+  margin-bottom:2.0em;
 }
 
 /* FONTS */
 
 h1 {
-  font-size: 150%;
+  font-size: 1.5em;
 }
 
 h2 {
-  font-size: 130%;
+  font-size: 1.3em;
 }
 
 h3 {
-  font-size: 110%;
+  font-size: 1.1em;
 }
 
 h4 {
-  font-size: 120%;
+  font-size: 1.2em;
 }
 
 p {
@@ -36,61 +31,68 @@ p {
   padding-bottom: 0.5em;
 }
 
-ul.nobullets {
-  margin-left: 0;
-  padding-left: 0;
-}
-
-ul.nobullets li {
-  list-style: none;
-  margin:0px;
-  padding:0px 10px 0px 0px;
-}
-
-
 .fieldWithErrors {
-  border-left:2px solid #e75c58;
-  padding-left: 2px;
+  border-left:0.2em solid #e75c58;
+  padding-left: 0.2em;
 }
 
 table td,
 table th {
-  padding: 5px;
+  padding: 0.5em;
 }
 
-#flash {
-  padding: 10px;
+#flash, .flash {
+  padding: 1em;
   background-color: #ff9;
-  margin: 1em 0;
+  margin: 1em 0em;
+}
+
+div.overlay {
+  background-color:#FFFFFF;
+  left:0px;
+  opacity:0.9;
+  position:fixed;
+  top:0px;
+  z-index:1000;
+  width:100%;
+  height:100%;
+}
+
+.tooltip {
+  background-color:#FFFFFF;
+  height: 8em;
+  padding:2em;
+  position:absolute;
+  z-index:10000;
 }
 
 .warning{
-  padding: 10px;
+  padding: 1em;
   background-color: #ff9;
   margin: 1em 0;
 }
-#ft{
-  margin-top:20px;
+.action_call{
+  font-weight: bold;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
-
-
+#ft{
+  margin-top:2.0em;
+}
 html{
-  background-color:#eeeeee;
   color:#333;
 }
 body{
   font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
-  font-size:11px;
   text-align:left;
 }
 
 a {
-  text-decoration:none;
   color:#0000F0;
 }
 
 #doc, #doc2, #doc3, #doc4{
-  padding-top:30px; /* prevent conflict with header */
+  padding-top:3em; /* prevent conflict with header */
 }
 
 /*-------------------------------------------
@@ -98,36 +100,31 @@ a {
  -------------------------------------------*/
 
 #content h1 {
-  padding-left: 140px;
-}
-
-a {
-  text-decoration:none;
-  color:#0000F0;
+  padding-left: 14em;
 }
 
 #breadcrumb_trail {
-  font-size: 15px;
+  font-size: 1.5em;
 }
 
 #assets_list td, th{
-  border:0px;
-  width: 140px;
+  border:0em;
+  width: 14.0em;
 }
 .assets{
   text-align:center;
 }
 .assets .photo td{
-  padding:7px 0px;
+  padding:0.7em 0em;
 }
 #assets_list .photo_titles td, th{
-  border:0px;
-  width: 140px;
-  padding-bottom:15px;
+  border:0em;
+  width: 14.0em;
+  padding-bottom:1.5em;
   font-size:1.1em;
 }
 #assets_list img{
-  border:1px solid white;
+  border:0.1em solid white;
 }
 
 #albums_list{
@@ -137,48 +134,53 @@ a {
   width:100%;
 }
 #albums_list td, th{
-  border:0px;
-  margin:0px;
-  padding:0px;
+  border:0em;
+  margin:0em;
+  padding:0em;
 }
 #albums_list .album_title{
-  margin:0px;
+  margin:0em;
 }
 #albums_list h2{
-  padding:0px;
-  margin:5px 0px;
+  padding:0em;
+  margin:0.5em 0em;
 }
 #albums_list .album_description td{
-  padding-bottom:15px;
+  padding-bottom:1.5em;
 }
 
 .gridlayout td{
   text-align:center;
-  border:0px;
+  border:0em;
 }
 
 #loginlinks{
-  margin:5px 0px;
+  margin:0.5em 0em;
 }
 #loginlinks ul,a{
-  padding:0px;
-  margin:0px;
+  padding:0em;
+  margin:0em;
 }
 #loginlinks li{
-  padding-left:0px;
-  padding-right:10px;
+  padding-left:0em;
+  padding-right:1em;
   font-size:1.3em;
+}
+
+.friends .thumb{
+  width:4em;
+  height:4em;
 }
 
 div#header{
   font-size:2em;
 }
 .weak{
-  font-size:85%;
+  font-size:0.85em;
 }
 
 .current a{
-        text-decoration:none;
+  text-decoration:none;
 }
 
 .themes .theme_thumb{
@@ -187,13 +189,13 @@ div#header{
 
 div.picture_row{
         clear: both;
-        min-height: 130px;
+        min-height: 13em;
 }
 
 div.picture{
-        width: 120px;
-        padding-left: 5px;
-        padding-right: 5px;
+        width: 12em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
         float: left;
         text-align: center;
         position: relative;
@@ -201,13 +203,13 @@ div.picture{
 }
 
 div.picture table {
-        height: 180px;
-        width: 130px;
+        height: 18em;
+        width: 13em;
 }
 
 div.picture td {
-        border: 0px;
-        padding: 0px;
+        border: 0em;
+        padding: 0em;
 }
 
 td.picture_title {
@@ -216,90 +218,80 @@ td.picture_title {
 }
 
 #photos img {
+padding:0.6em;
 background:white none repeat scroll 0%;
-border:1px solid #CCCCCC;
-padding:6px;
+}
+
+#photos img#photo{
+border:0.1em solid #CCCCCC;
+max-width:500px;
 }
 
 #photos div{
-padding:3px 2px;
+padding:0.3em 0.2em;
 text-align:center;
 /*vertical-align:middle;*/
-width:150px;
 }
 
 #nextprev{
 }
 
 #doc3{
-        margin:0px;
+        margin:0em;
 }
 
 
 .handle{
-  left:0px;
-}
-
-.link{
-        margin-bottom:20px;
-        margin-left:70px;
-        width:400px;
+  left:0em;
 }
 
 #static_page_creator input {
-        font-size: 25px;
+        font-size: 2.5em;
 }
 
 #static_page_creator p {
-        font-size: 20px;
+        font-size: 2em;
         text-align: center;
 }
 
 input#page_title{
         width: 100%;
-        margin-bottom: 25px;
+        margin-bottom: 2.5em;
 }
 
 input#page_create_fp_link {
-        margin-bottom: 5px;
+        margin-bottom: 0.5em;
 }
 
 .page_section{
   clear:both;
-  margin-bottom:20px;
+  margin-bottom:2em;
 }
 
 
 #profilepic .photo{
-  width:200px;
-  height:180px;
-}
-.summary_bar h3{
-  width:400px;
+  width:20em;
+  height:18em;
 }
 
 /*
  * USER_ASSETS VIEW CSS FOLLOWS:
  */
 
-.title {
-             font-weight: bolder;
-             font-size: 20px;
-             text-align: center;
+.center {
+  font-weight: bolder;
+  text-align: center;
+}
+
+#photo_description {
+                   font-size: 1.5em;
+                   width: 33.7em;
 }
 
 #photo_description span {
                    font-style: italic;
 }
 
-#photo_description textarea {
-                   width: 90%;
-}
-
-#photo_description form {
-                   padding: 10px;
-                   text-align: center
-}
 
 ul#profileitems {
   margin-left: 0;
@@ -308,28 +300,28 @@ ul#profileitems {
 
 ul#profileitems li {
   list-style: none;
-  margin:0px;
-  margin-bottom:6px;
-  padding:0px 10px 0px 0px;
+  margin:0em;
+  margin-bottom:0.6em;
+  padding:0em 1em 0em 0em;
+  font-size: 2em;
 }
 
 ul#uploadchoices{
   margin-left: 0;
   padding-left: 0;
-  padding-bottom:20px;
+  padding-bottom:2em;
 }
 
 ul#uploadchoices li{
-  margin-left: 30px;
-  padding:10px 0px 20px 10px;
+  margin-left: 3em;
+  padding:1em 0em 2em 1em;
   font-size:1.4em;
-  line-height: 20px
+  line-height: 2.0em
 }
 
 /* attempt at labels */
 #photos .label{
 z-index:10;
-position:relative;
 }
 
 #photos div.label:hover{
@@ -340,26 +332,26 @@ display:block;
 /* Auto-complete for person-tagging */
 .owner{
   width:100%;
-  padding:0px 5px;
+  padding:0em 0.5em;
   border-bottom:1px solid #ccc;
-  margin-bottom:10px;
+  margin-bottom:1em;
   text-align:right;
 }
 
 .app{
-  margin-bottom:10px;
+  margin-bottom:1em;
 }
 
 .application{
-  margin-top:10px;
-  margin-bottom:20px;
+  margin-top:1em;
+  margin-bottom:2em;
 }
 .steps{
-  margin-left:30px;
-  font-size:14px;
+  margin-left:3em;
+  font-size:1.4em;
 }
 .steps li{
-  margin-bottom:6px;
+  margin-bottom:0.6em;
 }
 
 .feedtitle{
@@ -367,42 +359,46 @@ display:block;
 }
 
 .toppad{
-  margin-top:10px;
+  margin-top:1em;
 }
-.editoptions{
-  float:right;
-  font-size:1.2em;
-}
-.editoptions a{
-  margin:0px 3px;
-}
-/* link edit page */
 
-#link{
+div.friend{
+  margin-bottom:10px;
+}
+
+/* link edit page */
+#links {
   font-size:1.4em;
 }
-.link_edit_link{
+#links .link_edit_link{
   position:absolute;
-  margin-left:150px;
+  margin-left:15em;
 }
-.link_destroy_link{
+#links .link_destroy_link{
   position:absolute;
-  margin-left:190px;
+  margin-left:19em;
 }
+
+#links .link{
+      margin-bottom:2em;
+      margin-left:7em;
+      width:40em;
+}
+
 
 /* themes */
 
 h1.section{
-  border-bottom:1px solid gray;
+  border-bottom:0.1em solid gray;
 }
 h2.section{
-  border-bottom:1px solid gray;
+  border-bottom:0.1em solid gray;
 }
 div.section{
-  margin-bottom:30px;
+  margin-bottom:3em;
 }
 div.subsection{
-  margin-bottom:10px;
+  margin-bottom:1em;
 }
 .subsection h3{
   font-weight:bold;
@@ -415,57 +411,66 @@ div.subsection{
 }
 
 .offset li{
-  margin-left:20px;
+  margin-left:2em;
 }
 
 #deliciousdesc li{
-  margin-left:20px;
+  margin-left:2em;
 }
 
 #tumblrdesc li{
-  margin-left:20px;
+  margin-left:2em;
 }
 
 /* admin */
-
 .admin_only{
-  border:3px solid red;
-  margin-top:30px;
+  border:0.3em solid red;
 }
 
 /* generic buttons */
-a.instacreate{
+a.new{
   text-decoration:underline;
   background-color:#fee876;
-  padding:8px;
-  border:1px solid #ecc101;
+  padding:0.8em;
+  border:0.1em solid #ecc101;
   color:#994800;
 }
 
 /* front page intro */
 #intro h1{
-  margin-bottom:8px;
+  margin-bottom:0.8em;
+  font-size:1.7em;
 }
 
 /* Friends and Contacts management */
 
 .friends_index h1 {
    text-align:center;
-   font-size:25px;
-   padding-bottom: 20px;
+   font-size:2.5em;
+   padding-bottom: 2em;
 }
 
-.friends_index #connection_status {
-   padding-bottom : 20px;
+.friends_index #connections {
+   padding-bottom : 2em;
 }
 
 .friends_index #new_friend_link {
-   font-size:20px;
+   font-size:2em;
    text-align:center;
-
 }
 
 .friends_index #friend_of_friend_links {
-   font-size:20px;
+   font-size:2em;
    text-align:center;
+}
+
+/* full width form - spread out to the width */
+.fullwidthform textarea{
+  width:100%;
+}
+.fullwidthform textfield{
+  width:100%;
+}
+.fullwidthform .submit_tag{
+  float:right;
 }
