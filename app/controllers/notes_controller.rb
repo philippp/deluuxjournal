@@ -33,6 +33,8 @@ class NotesController < ApplicationController
   end
 
   def edit
+    @assets = @fb_session.user_assets_index
+    @friends = @fb_session.friends_index
     @note = Note.find(params[:id])
   end
 
@@ -63,10 +65,13 @@ class NotesController < ApplicationController
   end
 
   def update
-    @note = Note.find(params[:id])
 
+    @note = Note.find(params[:id])
     respond_to do |format|
-      if @note.update_attributes(params[:note])
+      @note.text = params[:text]
+      @note.title = params[:title]
+
+      if @note.save
         if @note.title.length > 0
           flash[:notice] = "Updated \"#{@note.title}\"!"
         else
