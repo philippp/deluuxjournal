@@ -1,0 +1,252 @@
+body{
+  background-color:transparent;
+}
+
+#doc, #doc2, #doc3 {
+  min-height:40em;
+  height:auto;
+  color:#333333;
+  background-color: white;
+  border-bottom:0.5em solid #a6e3f9;
+  border-right:0.5em solid #a6e3f9;
+  border-left:0.5em solid #a6e3f9;
+}
+
+* html #doc, html #doc2, html #doc3 {
+height: 40em;
+}
+
+/*  a blue flash for blue deluux pages */
+#flash, .flash {
+  background-color:#FFFFB0;
+  border:4px solid #FFFF00;
+  font-size:1.6em;
+}
+
+.tooltip {
+  background-color:#FFFFFF;
+  border:1em solid #A2E3F9;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a, a:hover, a:visited{
+  color:#02b0f0;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+div#login_form {
+  float:left;
+  margin-left:3em;
+  margin-top:3em;
+}
+
+div#login_form_inner {
+  background-color:white;
+  padding:2em;
+}
+
+div#deluux_logo {
+  margin-left:3em;
+  width:25em;
+  text-align:center;
+}
+
+div.importservice_box.left{
+  padding-right: 2em;
+}
+
+div.importsertice_box.right{
+  padding-left: 2em;
+}
+
+div.importservice_inside {
+  width: 30em;
+  padding: 1em;
+  background-color: white;
+}
+div.importservice{
+  width:14em;
+  display:inline;
+  float:left;
+  padding: 1.5em;
+  min-height: 4.5em;
+  text-align: center;
+}
+
+div.transfer_count {
+  font-size: 1.5em;
+}
+
+div.transfer_count.label {
+  width: 8em;
+  float:left;
+}
+
+input.submit_button, input.editor_ok_button, input.submit_tag{
+/*
+background-color:#dcf3fb;
+border-color:#a2e3f9;
+border-style:bevel;
+border-width:0.25em;
+color:#0f7fa7;
+*/
+font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+padding: 0.1em 0.2em 0.1em;
+text-align:center;
+font-weight: bold;
+
+}
+
+input.editor_ok_button{
+  margin-left:1em;
+  margin-right:0.5em;
+}
+
+input.password_field, input.text_field, input.editor_field, textarea {
+color: #0f7fa7;
+background-color: #dcf3fb;
+}
+
+
+select {
+border:0.3em solid #a2e3f9;
+color: #0f7fa7;
+background-color: #dcf3fb;
+padding:0.3em;
+}
+
+label {
+ font-size: 2em;
+}
+
+div.site_preview {
+  background-color: white;
+}
+
+div.site_preview_box {
+  margin-bottom: 3em;
+  margin-left: 3em;
+}
+ /* Top border and right corner */
+ .bt {
+ background:url(/images/round_edge_box.png) no-repeat 100% 0;
+ margin:0 0 0 1em;
+ height:1em;
+ }
+ /* Top left corner */
+.bt div {
+ height:1em;
+ width:1em;
+ position:relative;
+ left:-1em;
+ background:url(/images/round_edge_box.png) no-repeat 0 0;
+ }
+ /* Bottom border and right corner */
+ .bb {
+ background:url(/images/round_edge_box.png) no-repeat 100% 100%;
+ margin:0 0 0 1em;
+ height:1em;
+ }
+ /* Bottom left corner */
+ .bb div {
+ height:1em;
+ width:1em;
+ position:relative;
+ left:-1em;
+ background:url(/images/round_edge_box.png) no-repeat 0 100%;
+ }
+ /* Left border */
+ .i1 {
+ padding:0 0 0 1em;
+ background:url(/images/round_edge_border.png) repeat-y 0 0;
+ }
+  /* Right border */
+ .i2 {
+     padding:0 1em 0 0;
+    background:url(/images/round_edge_border.png) repeat-y 100% 0;
+  }
+
+.edit_in_place_box:hover {
+  min-width:5.4em;
+  min-height:2.4em;
+  padding:0.4em 0.4em 0.4em 0.4em;
+  border:0.2em solid #A6E3F9;
+  /* background-color: #E0F2F9; */
+}
+
+#editlive textarea{
+  font-size:1.2em;
+  color:black;
+  background-color:white;
+}
+
+/* User Assets Index */
+
+div#sidebar div.albums {
+  text-align: center;
+}
+
+ul.pager {
+font-size: 1.2em;
+}
+
+/* User Assets Show */
+
+div#nextprev div.albumdescription {
+  display:none;
+}
+
+/* User Assets Show Links */
+#profile_links .link{
+  margin-bottom:3em;
+  padding-right:1.5em;
+}
+#profile_links .link_header{
+  margin-bottom:0.6em;
+  padding-bottom:0.1em;
+}
+
+.service_row{
+  margin-bottom:10px;
+  margin-top:20px;
+}
+.service_row td{
+  padding:10px 10px 10px 0px;
+  font-size:1.2em;
+}
+.import_request div.thumb{
+  width:4em;
+  height:4em;
+  overflow:hidden;
+  border:0.1em solid white;
+}
+.service_status_photos{
+  height:110px;
+  overflow:hidden;
+}
+.service_row td{
+  border-bottom:1px solid #cccccc;
+  margin:20px;
+}
