@@ -79,13 +79,14 @@ var remove_friend_notify = function( friend_id ){
 
 var update_friend_notify_field = function(){
   $("friend_notify_target").innerHTML = "";
+  $("notify_id_list").value = "";
   for( var i = 0; i < friend_notify_list.length; i++ ){
     var friend = friend_notify_list[i];
-    $("friend_notify_target").innerHTML += "<p>"+friend[1]+"&nbsp;<a href='#' onclick='remove_friend_notify("+friend[0]+");'>[X]</a></p>"
+    $("notify_id_list").value += friend[0]+",";
+    $("friend_notify_target").innerHTML += "<p>"+friend[1]+"&nbsp;<a href='#' onclick='remove_friend_notify("+friend[0]+");'>[X]</a></p>";
   }
-  $("notify_id_list").value = friend_notify_list.join();
-
 }
+
 
 
   setInterval("check_friends(tinyMCE.getInstanceById('text').getDoc().body.innerHTML, 'friend_target');", 5000);
