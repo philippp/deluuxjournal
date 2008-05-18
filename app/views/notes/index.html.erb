@@ -3,7 +3,7 @@
 </div>
 <div class="yui-ge">
   <div class="yui-u first">
-    <% for note in @notes[0..4] %>
+    <% for note in @notes[0...3] %>
     <div class="note section" style="padding-top: 0.5em; padding-left: 1em; border: 2px solid #A6E3F9; background-color: #D6F3F9; padding-bottom: 2em;" >
       <h2 class="title subsection" style="text-align: left; font-weight: bolder;">
         <%= app_link_to note.title , {:action => :show, :id => note.id}, {:class => "edit"} %>
