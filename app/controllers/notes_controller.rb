@@ -92,7 +92,7 @@ class NotesController < ApplicationController
     @note.destroy
 
     respond_to do |format|
-      format.html { redirect_to params[:dl_sig_root_loc] }
+      format.html { app_redirect_to :action => :index }
       format.xml  { head :ok }
     end
   end
