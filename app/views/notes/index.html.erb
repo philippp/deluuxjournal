@@ -34,9 +34,9 @@
     <h3>Past Entries</h3>
     <% for note in @notes %>
       <% if note.title.length > 0 %>
-        <li><%= app_link_to abbreviate(note.title, 15), {:action => :show, :id => note.id}  %></li>
+        <li style="list-style-position: inside;"><%= app_link_to abbreviate(note.title, 15), {:action => :show, :id => note.id}  %></li>
       <% else %>
-        <li><%= app_link_to note.created_at.strftime("%d/%m/%y %H:%M"), {:action => :show, :id => note.id}  %></li>
+        <li style="list-style-position: inside;"><%= app_link_to note.created_at.strftime("%d/%m/%y %H:%M"), {:action => :show, :id => note.id}  %></li>
       <% end %>
     <% end %>
    </ul>
