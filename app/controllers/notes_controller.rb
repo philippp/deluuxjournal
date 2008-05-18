@@ -6,7 +6,6 @@ class NotesController < ApplicationController
 
   def index
     @notes = Note.find_by(params[:dl_sig_owner_user])
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @notes }
@@ -42,12 +41,18 @@ class NotesController < ApplicationController
     @note.text = params[:text]
     @note.title = params[:title]
     @note.user_id = params[:dl_sig_user]
+    @note.notify_id_list = params[:notify_id_list]
     @note.user_type = "deluux"
     create_crosspost
 
     respond_to do |format|
       if @note.save
-        flash[:notice] = "Added \"#{@note.title}\"!"
+        if @note.title.length > 0
+          flash[:notice] = "Added \"#{@note.title}\"!"
+        else
+          flash[:notice] = "Added your entry!"
+        end
+
         format.html {
           app_redirect_to :action => "index"
         }
@@ -62,7 +67,12 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.update_attributes(params[:note])
-        flash[:notice] = "Updated \"#{@note.title}\"!"
+        if @note.title.length > 0
+          flash[:notice] = "Updated \"#{@note.title}\"!"
+        else
+          flash[:notice] = "Updated your entry!"
+        end
+
         format.html { app_redirect_to :action => "index" }
         format.xml  { head :ok }
       else
