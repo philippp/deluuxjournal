@@ -10,6 +10,11 @@ module ApplicationHelper
     link_to(name, options, html_options)
   end
 
+  def abbreviate(original, max_length)
+    return original if original.length < max_length
+    return original[0..max_length-3]+"..."
+  end
+
   def deluux_loc
     DELUUX_LOC
   end
