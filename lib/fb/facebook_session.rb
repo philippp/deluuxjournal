@@ -39,8 +39,8 @@ require "hpricot"
 
 module RFacebook
 
-API_SERVER_BASE_URL      = "overhear.us"
-LOGIN_SERVER_BASE_URL    = "overhear.us"
+API_SERVER_BASE_URL      = DELUUX_LOC #"overhear.us"
+LOGIN_SERVER_BASE_URL    = DELUUX_LOC #"overhear.us"
 
 API_SERVER_PATH          = "/restserver.php"
 LOGIN_SERVER_PATH        = "/login.php"
@@ -246,10 +246,6 @@ class FacebookSession
 
     # get a server handle
     port = (use_ssl == true) ? 443 : 80
-    if RAILS_ENV == "development"
-      port = 3001
-      api_server_base_url = "notphilatall.com"
-    end
     http_server = Net::HTTP.new(api_server_base_url, port)
     http_server.use_ssl = use_ssl
 
