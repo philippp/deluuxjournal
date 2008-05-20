@@ -17,6 +17,6 @@ config.action_view.cache_template_extensions         = false
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
 
-APP_ID = 6
+APP_ID = 10
 DELUUX_LOC = "http://deluux.com/"
 

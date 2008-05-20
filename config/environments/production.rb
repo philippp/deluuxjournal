@@ -17,5 +17,5 @@ config.action_controller.perform_caching             = true
 # Disable delivery errors, bad email addresses will be ignored
 # config.action_mailer.raise_delivery_errors = false
 
-APP_ID = 6
+APP_ID = 10
 DELUUX_LOC = "http://deluux.com/"
