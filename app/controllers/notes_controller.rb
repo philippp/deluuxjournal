@@ -39,6 +39,7 @@ class NotesController < ApplicationController
   end
 
   def create
+
     @note = Note.new(params[:note])
     @note.text = params[:text]
     @note.title = params[:title]
@@ -54,10 +55,8 @@ class NotesController < ApplicationController
         else
           flash[:notice] = "Added your entry!"
         end
-
-        format.html {
-          app_redirect_to :action => "index"
-        }
+        @notes = Note.find_by(params[:dl_sig_owner_user])
+        format.html { render :action => "index" }
       else
         format.html { render :action => "new" }
       end
@@ -77,8 +76,8 @@ class NotesController < ApplicationController
         else
           flash[:notice] = "Updated your entry!"
         end
-
-        format.html { app_redirect_to :action => "index" }
+        @notes = Note.find_by(params[:dl_sig_owner_user])
+        format.html { render :action => "index" }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -92,7 +91,7 @@ class NotesController < ApplicationController
     @note.destroy
 
     respond_to do |format|
-      format.html { app_redirect_to :action => :index }
+      format.html { redirect_to :action => :index }
       format.xml  { head :ok }
     end
   end

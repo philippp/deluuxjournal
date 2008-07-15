@@ -6,7 +6,7 @@
     <% for note in @notes[0...3] %>
     <div class="note section" style="padding-top: 0.5em; padding-left: 1em; border: 2px solid #A6E3F9; background-color: #D6F3F9; padding-bottom: 2em;" >
       <h2 class="title subsection" style="text-align: left; font-weight: bolder;">
-        <%= app_link_to note.title , {:action => :show, :id => note.id}, {:class => "edit"} %>
+        <%= link_to note.title , "/#{params[:dl_sig_stub]}/show/#{note.id}", {:class => "edit"} %>
       </h2>
       <div class="text subsection" style="max-height: 7em; overflow: hidden;">
         <%= note.text %>
@@ -15,10 +15,10 @@
         Written <%= time_ago_in_words(note.created_at) %> ago.
       </div>
       <div style="float: right; font-weight: bolder; padding-right: 1em;">
-        <%= app_link_to 'Read' , {:action => :show, :id => note.id}, {:class => "show"} %>
+        <%= link_to 'Read' , "/#{params[:dl_sig_stub]}/show/#{note.id}", {:class => "show"} %>
         <% if is_owner? %>
-          <%= app_link_to 'Edit' , {:action => :edit, :id => note.id}, {:class => "edit"} %>
-          <%= app_link_to 'Delete' , {:action => :destroy, :id => note.id}, {:class => "destroy"} %>
+          <%= link_to 'Edit' , "/#{params[:dl_sig_stub]}/edit/#{note.id}", {:class => "edit"} %>
+          <%= link_to 'Delete', "/#{params[:dl_sig_stub]}/destroy/#{note.id}", {:class => "destroy"} %>
         <% end %>
       </div>
     </div>
@@ -28,15 +28,15 @@
     <ul style="margin-left: 2em;">
       <% if is_owner? %>
       <div style="margin-bottom: 2em; font-weight: bolder; margin-top: 1em; font-size: 1.5em;">
-        <%= app_link_to 'New Entry', {:action => :new}, {:class => :new} %>
+        <%= link_to 'New Entry', "/#{params[:dl_sig_stub]}/new", {:class => "new"} %>
       </div>
       <% end %>
     <h3>Past Entries</h3>
     <% for note in @notes %>
       <% if note.title.length > 0 %>
-        <li style="list-style-position: inside;"><%= app_link_to abbreviate(note.title, 15), {:action => :show, :id => note.id}  %></li>
+        <li style="list-style-position: inside;"><%= link_to abbreviate(note.title, 15), "/#{params[:dl_sig_stub]}/show/#{note.id}" %></li>
       <% else %>
-        <li style="list-style-position: inside;"><%= app_link_to note.created_at.strftime("%d/%m/%y %H:%M"), {:action => :show, :id => note.id}  %></li>
+        <li style="list-style-position: inside;"><%= link_to note.created_at.strftime("%d/%m/%y %H:%M"), "/#{params[:dl_sig_stub]}/show/#{note.id}" %></li>
       <% end %>
     <% end %>
    </ul>

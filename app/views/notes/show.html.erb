@@ -4,8 +4,8 @@
 
 <% if is_owner? %>
 <div style="font-style: italic; float: right; padding-right: 2em;">
-  You wrote this <%= time_ago_in_words(@note.created_at) %> ago and can <%= app_link_to 'edit' , {:action => :edit, :id => @note.id}, {:class => "edit"} %>
-  or <%= app_link_to 'delete' , {:action => :destroy, :id => @note.id}, {:class => "destroy"} %> it.
+  You wrote this <%= time_ago_in_words(@note.created_at) %> ago and can <%= link_to 'edit' , {:action => :edit, :id => @note.id}, {:class => "edit"} %>
+  or <%= link_to 'delete' , {:action => :destroy, :id => @note.id}, {:class => "destroy"} %> it.
 </div>
 <% end %>
 

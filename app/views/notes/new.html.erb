@@ -108,12 +108,8 @@ var update_friend_notify_field = function(){
 
     <%= hidden_field_tag :notify_id_list %>
 
-    <% params.each{|k,v| %>
-      <%= hidden_field_tag( k, v ) if k[0..2]=="dl_" %>
-    <% } %>
-
     <p style="font-size: 1.5em; text-align: center; width: 100%;">
-      <%= submit_tag( "Create" ) %> or <%= app_link_to( "Cancel", :action => "index" ) %>
+      <%= submit_tag( "Create" ) %> or <%= link_to( "Cancel", "/#{params[:dl_sig_stub]}/index" ) %>
     </p>
 
   </div>
