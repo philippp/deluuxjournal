@@ -1,6 +1,6 @@
 class Note < ActiveRecord::Base
 
-  def self.max_summary_length() 300; end
+  def self.max_summary_length() 250; end
 
   def self.find_by(user_id, type = "deluux")
     self.find(:all, :conditions => ["user_id = ? AND user_type = ?", user_id, type],
