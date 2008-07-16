@@ -39,8 +39,8 @@ require "hpricot"
 
 module RFacebook
 
-API_SERVER_BASE_URL      = DELUUX_LOC #"overhear.us"
-LOGIN_SERVER_BASE_URL    = DELUUX_LOC #"overhear.us"
+API_SERVER_BASE_URL      = "deluux.com" #"overhear.us"
+LOGIN_SERVER_BASE_URL    = "deluux.com" #"overhear.us"
 
 API_SERVER_PATH          = "/restserver.php"
 LOGIN_SERVER_PATH        = "/login.php"
