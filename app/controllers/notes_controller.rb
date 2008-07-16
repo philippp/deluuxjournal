@@ -39,24 +39,27 @@ class NotesController < ApplicationController
   end
 
   def create
-
     @note = Note.new(params[:note])
     @note.text = params[:text]
     @note.title = params[:title]
     @note.user_id = params[:dl_sig_user]
     @note.notify_id_list = params[:notify_id_list]
     @note.user_type = "deluux"
-    create_crosspost
 
     respond_to do |format|
       if @note.save
+
+        create_crosspost
+        update_app_link
+        send_notifications
+
         if @note.title.length > 0
           flash[:notice] = "Added \"#{@note.title}\"!"
         else
           flash[:notice] = "Added your entry!"
         end
         @notes = Note.find_by(params[:dl_sig_owner_user])
-        format.html { render :action => "index" }
+        format.html { redirect_to params["dl_sig_root_loc"] }
       else
         format.html { render :action => "new" }
       end
@@ -66,21 +69,23 @@ class NotesController < ApplicationController
   def update
 
     @note = Note.find(params[:id])
-    respond_to do |format|
-      @note.text = params[:text]
-      @note.title = params[:title]
+    @note.text = params[:text]
+    @note.title = params[:title]
 
+    respond_to do |format|
       if @note.save
+        update_app_link
+        send_notifications
         if @note.title.length > 0
           flash[:notice] = "Updated \"#{@note.title}\"!"
         else
           flash[:notice] = "Updated your entry!"
         end
         @notes = Note.find_by(params[:dl_sig_owner_user])
-        format.html { render :action => "index" }
+        format.html { redirect_to params["dl_sig_root_loc"] }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { redirect_to "#{params["dl_sig_root_loc"]}/edit/#{params[:id]}" }
         format.xml  { render :xml => @note.errors, :status => :unprocessable_entity }
       end
     end
@@ -91,7 +96,7 @@ class NotesController < ApplicationController
     @note.destroy
 
     respond_to do |format|
-      format.html { redirect_to :action => :index }
+      format.html { redirect_to params["dl_sig_root_loc"] }
       format.xml  { head :ok }
     end
   end
@@ -103,6 +108,33 @@ class NotesController < ApplicationController
       ljs = LJSession.new(params[:lj_login], params[:lj_password])
       ljs.post_entry(params[:title], params[:text])
     end
+  end
+
+  def update_app_link
+    update_desc_text = @note.summary
+    if @note.summary_shortened?
+      update_desc_text += "&nbsp;<span class='read_more'><a href='#{params["dl_sig_root_loc"]}/show/#{@note.id}'>Read all of &quot;#{@note.title}&quot;</a></span><br/>"
+    end
+    @notes = Note.find_by(params[:dl_sig_owner_user])
+    if @notes.size > 1
+      update_desc_text += "<div id='journal_archive'>Other recent entries: "+@notes[1..3].map{ |n|
+        "<a href='#{params["dl_sig_root_loc"]}/show/#{n.id}' alt='#{n.title}'>&quot;#{n.title}&quot;</a>"
+      }.join(", ")+"</div>"
+    end
+    @fb_session.links_update({"link[description]" => update_desc_text})
+  end
+
+  def send_notifications
+    @note.notify_id_list.split(",").each{ |friend_id|
+      notify_params = { }
+      notify_params["notification[notify_subject]"] = "I mentioned you in a blog post"
+      notify_params["notification[notify_message]"] = "I hope you like it! You can read it at "
+      notify_params["notification[url]"] = "#{params["dl_sig_root_loc"]}/show/#{@note_id}"
+      notify_params["notification[friend_id]"] = friend_id
+      notify_params["notification[app_event_id]"] = @note.id
+      @fb_session.notifications_create(notify_params)
+    }
+
   end
 
 end

@@ -8,8 +8,8 @@
       <h2 class="title subsection" style="text-align: left; font-weight: bolder;">
         <%= link_to note.title , "/#{params[:dl_sig_stub]}/show/#{note.id}", {:class => "edit"} %>
       </h2>
-      <div class="text subsection" style="max-height: 7em; overflow: hidden;">
-        <%= note.text %>
+      <div class="text subsection">
+        <%= note.summary %>
       </div>
       <div style="float: left; font-style: italic;">
         Written <%= time_ago_in_words(note.created_at) %> ago.
