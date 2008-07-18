@@ -1,0 +1,37 @@
+TineMceGzip
+===========
+
+By: Ben Kittrell - http://garbageburrito.com
+	DoodleBit LLC - http://doodlebit.com
+	
+For: DoodleKit Website Builer - http://doodlekit.com
+
+Assumptions
+===========
+
+This plugin assumes that you have TinyMCE 2.0.6.1 or higher installed in /public/javascripts/tiny_mce.
+
+Installation
+============
+
+Extract the plugin to vendor/plugins.  This README should be in RAILS_ROOT/vendor/plugins/tiny_mce_gzip
+
+Add the following line to routes.rb
+
+	TinyMceGzip::Routes.add_routes
+	
+Change your tiny_mce javascript include to the following.
+
+	<%= javascript_include_tag("tiny_mce/tiny_mce_gzip") %>
+	
+That's it!
+
+
+Additional Configuration
+========================
+
+To utilize the caching mechanism, ensure that the following property is set to true in production.rb.
+
+config.action_controller.perform_caching             = true
+
+

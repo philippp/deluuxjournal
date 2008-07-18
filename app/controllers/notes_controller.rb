@@ -7,7 +7,11 @@ class NotesController < ApplicationController
   def index
     @notes = Note.find_by(params[:dl_sig_owner_user])
     respond_to do |format|
-      format.html # index.html.erb
+      if @notes.size == 0 and is_owner?
+        format.html { redirect_to "#{params["dl_sig_root_loc"]}/new" }
+      else
+        format.html # index.html.erb
+      end
       format.xml  { render :xml => @notes }
       format.rss  { render :xml => @notes }
     end
@@ -26,6 +30,7 @@ class NotesController < ApplicationController
     @note = Note.new
     @assets = @fb_session.user_assets_index
     @friends = @fb_session.friends_index
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @note }

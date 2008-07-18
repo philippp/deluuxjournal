@@ -16,7 +16,11 @@ class ApplicationController < ActionController::Base
   end
 
   def check_auth
-    params[:dl_sig_owner_user] == params[:dl_sig_user] or raise AccessDenied
+    raise AccessDenied unless is_owner?
+  end
+
+  def is_owner?
+    params[:dl_sig_owner_user] == params[:dl_sig_user]
   end
 
   def catch_errors

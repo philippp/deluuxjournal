@@ -16,13 +16,11 @@ config.action_view.cache_template_extensions         = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
-DELUUX_API_SECRET = "8i5wfdYbzKQAwR6fDBMSrHwsGGNOYU2P"
-
-APP_ID = 10
-DELUUX_LOC = "http://deluux.com/"
-DELUUXJOURNAL_LOC = "http://deluuxjournal.heroku.com/"
-DELUUX_DOMAIN = "deluux.com"
-
-#require 'ruby-debug'
-#Debugger.start
+DELUUX_API_SECRET = "F3C4IyuJk02f0UgXapEp5yV0OS7nEGfu"
+APP_ID = 6
+DELUUX_LOC = "http://notphilatall.com:3000/"
+DELUUXJOURNAL_LOC = "http://notphilatall.com:3003/"
+DELUUX_DOMAIN = "notphilatall.com"
+require 'ruby-debug'
+Debugger.start
 

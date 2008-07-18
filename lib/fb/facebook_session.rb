@@ -179,9 +179,8 @@ class FacebookSession
     puts "XMLString: #{xmlstring}" if @display_output
 
     if xmlstring.strip.size == 0
-      return { :ok => true }
+      return { }
     end
-
     xml = Hpricot(xmlstring)
 
     puts "XML object: " + xml.inspect + "\n" if @display_output
@@ -249,10 +248,10 @@ class FacebookSession
 
     # get a server handle
     port = (use_ssl == true) ? 443 : 80
-#    if RAILS_ENV == "development"
-#      port = 3001
-#      api_server_base_url = "notphilatall.com"
-#    end
+    if RAILS_ENV == "ppdev"
+      port = 3001
+      api_server_base_url = "notphilatall.com"
+    end
 
     http_server = Net::HTTP.new(api_server_base_url, port)
     http_server.use_ssl = use_ssl
