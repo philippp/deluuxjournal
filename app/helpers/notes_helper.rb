@@ -4,6 +4,25 @@ module NotesHelper
     "<script type=\"text/javascript\" src=\"http://#{request.host_with_port}/javascripts/tiny_mce/tiny_mce.js\"></script>"
   end
 
+  def deluuxjournal_js_include
+    "<script type=\"text/javascript\" src=\"http://#{request.host_with_port}/javascripts/detect_friends.js\"></script>"
+    "<script type=\"text/javascript\" src=\"http://#{request.host_with_port}/javascripts/load_grid.js\"></script>"
+  end
+
+  def render_asset_grid(row_count, col_count)
+    grid_str = "<table class='asset_grid'>\n"
+    (0...row_count).each{ |row_id|
+      grid_str += "\t<tr>"
+      (0...col_count).each{ |col_id|
+        grid_str += "<td id='ag_#{row_id}_#{col_id}' class='asset_cell'></td>"
+      }
+      grid_str += "<tr>\n"
+    }
+    grid_str += "</table>"
+    return grid_str
+  end
+
+
   def render_asset_friend_js(assets, friends)
    # Generate JS Arrays of Image Assets and Friends -->
    # myImageList = [ [title, filename], ...] -->
@@ -12,9 +31,9 @@ module NotesHelper
 
     assets.each do |asset|
       if asset["title"] and asset["title"].length > 0
-        rb_array_assets << "[\"#{asset["title"]}\", \"#{asset["public_filename"]}\"]"
+        rb_array_assets << "[\"#{asset["title"]}\", \"#{asset["public_filename"]}\", \"#{asset["public_bigthumb"]}\", \"#{asset["public_thumb"]}\"]"
       else
-        rb_array_assets << "[\"#{asset["public_filename"].split("/").last}\", \"#{asset["public_filename"]}\"]"
+        rb_array_assets << "[\"#{asset["public_filename"].split("/").last}\", \"#{asset["public_filename"]}\", \"#{asset["public_bigthumb"]}\", \"#{asset["public_thumb"]}\"]"
       end
     end
     # <!-- Friend array -->

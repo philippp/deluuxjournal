@@ -44,6 +44,7 @@ class NotesController < ApplicationController
   end
 
   def create
+    debugger
     @note = Note.new(params[:note])
     @note.text = params[:text]
     @note.title = params[:title]
