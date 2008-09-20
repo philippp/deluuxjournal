@@ -9,7 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 5) do
+ActiveRecord::Schema.define(:version => 8) do
+
+  create_table "comments", :force => true do |t|
+    t.integer  "note_id"
+    t.string   "author_name"
+    t.string   "author_email"
+    t.string   "author_url"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "notes", :force => true do |t|
     t.integer  "user_id"
@@ -19,6 +29,8 @@ ActiveRecord::Schema.define(:version => 5) do
     t.datetime "updated_at"
     t.string   "user_type"
     t.string   "title"
+    t.string   "notify_id_list"
+    t.string   "summary"
   end
 
   add_index "notes", ["user_id", "user_type", "created_at"], :name => "index_notes_on_user_id_and_user_type_and_created_at"

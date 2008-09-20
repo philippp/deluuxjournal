@@ -4,12 +4,23 @@
 
 <% if is_owner? %>
 <div style="font-style: italic; float: right; padding-right: 2em;">
-  You wrote this <%= time_ago_in_words(@note.created_at) %> ago and can <%= link_to 'edit' , {:action => :edit, :id => @note.id}, {:class => "edit"} %>
-  or <%= link_to 'delete' , {:action => :destroy, :id => @note.id}, {:class => "destroy"} %> it.
+  You wrote this <%= time_ago_in_words(@note.created_at) %> ago and can <%= link_to 'edit' , "#{params[:dl_sig_root_loc]}/edit/#{@note.id}", {:class => "edit"} %>
+  or <%= link_to 'delete' , "#{params[:dl_sig_root_loc]}/destroy/#{@note.id}", {:class => "destroy"} %> it.
 </div>
 <% end %>
 
 <div style="padding: 2em;">
   <%= @note.text %>
 </div>
+
+<div class="subsection">
+  <%= render :partial => "comments/comment_form", :locals => {:note => @note, :submit_path => "#{params["dl_sig_root_loc"]}/create_comment"} %>
+  <h3>Comments:</h3>
+  <span id="comments">
+    <div id="comments_list">
+      <%= render :partial => "comments/comment", :collection => @note.comments %>
+    </div>
+  </span>
+</div>
+
 

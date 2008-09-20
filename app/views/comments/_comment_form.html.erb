@@ -1,0 +1,25 @@
+<style>
+  div.blog_comment_spacer { width: 11em; float: left; }
+</style>
+
+<% form_for(:comment, :url => submit_path,  :method => :post) do |f| %> 
+  <%= hidden_field_tag :note_id, note.id %>
+  <% unless logged_in? %>
+    <div>
+      <div class="blog_comment_spacer">Your Name</div>
+      <div><%= text_field_tag :author_name, "anoymous" %></div>
+    </div>
+    <div>
+      <div class="blog_comment_spacer">Your Email</div>
+      <div><%= text_field_tag :author_email  %></div>
+    </div>
+    <div>
+      <div class="blog_comment_spacer">Your Site</div>
+      <div><%= text_field_tag :author_url %></div></div>
+  <% end %>
+  <div style="padding-top: 2em;">
+    <div class="blog_comment_spacer">Your Comment:</div>
+    <div><%= text_area_tag :content, "", {:cols => 80, :rows => 10, :style => "width: 30em; margin-top: 0em;"} %></div>
+  </div>
+  <div><div class="blog_comment_spacer">&nbsp;</div><div><%= submit_tag "Add Comment" %></div></div>
+<% end %>

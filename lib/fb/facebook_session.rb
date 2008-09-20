@@ -250,7 +250,7 @@ class FacebookSession
     port = (use_ssl == true) ? 443 : 80
     if RAILS_ENV == "ppdev"
       port = 3001
-      api_server_base_url = "notphilatall.com"
+      api_server_base_url = "deluux.dev"
     end
 
     http_server = Net::HTTP.new(api_server_base_url, port)

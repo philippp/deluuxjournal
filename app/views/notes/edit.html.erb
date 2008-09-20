@@ -1,11 +1,12 @@
 <%= render_asset_friend_js( @assets, @friends ) %>
+<%= deluuxjournal_js_include %>
 
 <div id="blogheader" class="section yui-g">
   <h1>Edit Entry</h1>
 </div>
 <%= error_messages_for :note %>
 
-<% form_for(@note, :url => {:action => "update"}, :html => {:id => "new_note"}) do |f| %>
+<% form_for(@note, :url => "#{params[:dl_sig_root_loc]}/update/#{@note.id}", :html => {:id => "update_note"}) do |f| %>
 <div class="yui-ge">
   <div class="yui-u first">
 
@@ -18,13 +19,17 @@
     </p>
     <%= hidden_field_tag :id, @note.id %>
 
-    <% params.each{|k,v| %>
-      <%= hidden_field_tag( k, v ) if k[0..2]=="dl_" %>
-    <% } %>
-
     <p style="font-size: 1.5em; text-align: center; width: 100%;">
       <%= submit_tag( "Update" ) %> or <%= link_to( "Cancel", :action => "index" ) %>
     </p>
+    <h3>Click on your photos and include them!</h3>
+    <a href="#grid" style="display:none;" onclick="render_prev_grid_page();" id="prev_grid_page_link">Previous Page</a>
+    <a href="#grid" onclick="render_next_grid_page();" id="next_grid_page_link">Next Page</a>
+    <a name="grid" id="grid"></a>
+    <%= render_asset_grid(4,4) %>
+    <script type="text/javascript">
+      render_grid(1);
+    </script>
 
   </div>
 

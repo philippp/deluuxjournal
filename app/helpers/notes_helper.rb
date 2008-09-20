@@ -5,8 +5,7 @@ module NotesHelper
   end
 
   def deluuxjournal_js_include
-    "<script type=\"text/javascript\" src=\"http://#{request.host_with_port}/javascripts/detect_friends.js\"></script>"
-    "<script type=\"text/javascript\" src=\"http://#{request.host_with_port}/javascripts/load_grid.js\"></script>"
+    "<script type=\"text/javascript\" src=\"http://#{request.host_with_port}/javascripts/detect_friends.js\"></script><script type=\"text/javascript\" src=\"http://#{request.host_with_port}/javascripts/load_grid.js\"></script>"
   end
 
   def render_asset_grid(row_count, col_count)
@@ -51,7 +50,7 @@ module NotesHelper
     js_array_assets = rb_array_assets.join(","); js_array_friends = rb_array_friends.join(",");
     return "<script type=\"text/javascript\">
   #{ rb_list_friends_decl }
-  var myImageList = new Array( #{ js_array_assets } );
+  //var myImageList = new Array( #{ js_array_assets } );
   var myFriendList = new Array( #{ js_array_friends } );
 
   var get_friend_by_id = function(friend_id){

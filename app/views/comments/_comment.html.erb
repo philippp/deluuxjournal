@@ -1,0 +1,13 @@
+<div class="comment clearfix">
+  <div class="comment_author_time">
+    <%= author_link_for_comment(comment) %><br/>
+    <%= distance_of_time_in_words_to_now( comment.created_at ).capitalize %> ago
+  <% if is_owner? %>
+    Delete Comment
+  <% end %>
+
+  </div>
+  <div class="comment_contents">
+    <div class="comment_content"><%= h comment.content %></div>
+  </div>
+</div>

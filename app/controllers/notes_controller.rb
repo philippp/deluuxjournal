@@ -28,11 +28,11 @@ class NotesController < ApplicationController
 
   def new
     @note = Note.new
-    @assets = @fb_session.user_assets_index
+    @assets = @fb_session.user_assets_index(:page => 1)
     @friends = @fb_session.friends_index
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :layout => "notes_create" }
       format.xml  { render :xml => @note }
     end
   end
@@ -41,10 +41,13 @@ class NotesController < ApplicationController
     @assets = @fb_session.user_assets_index
     @friends = @fb_session.friends_index
     @note = Note.find(params[:id])
+    respond_to do |format|
+      format.html { render :layout => "notes_create" }
+      format.xml  { render :xml => @note }
+    end
   end
 
   def create
-    debugger
     @note = Note.new(params[:note])
     @note.text = params[:text]
     @note.title = params[:title]
@@ -72,8 +75,27 @@ class NotesController < ApplicationController
     end
   end
 
-  def update
+  def create_comment
+    @comment = Comment.new
+    @comment.note_id = params[:note_id]
+    @comment.author_name = params[:author_name]
+    @comment.author_url = params[:author_url]
+    @comment.author_email = params[:author_email]
+    @comment.content = params[:content]
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to "#{params[:dl_sig_root_loc]}/show/#{@comment.note_id}"}
+      end
+    end
+  end
 
+  def destroy_comment
+    if is_owner?
+      @comment = Comment.destroy()
+    end
+  end
+  
+  def update
     @note = Note.find(params[:id])
     @note.text = params[:text]
     @note.title = params[:title]

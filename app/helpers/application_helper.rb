@@ -27,4 +27,8 @@ module ApplicationHelper
     params[:dl_sig_owner_user] == params[:dl_sig_user]
   end
 
+  def logged_in? 
+    params[:dl_sig_user].to_i != 0 
+  end
+  
 end

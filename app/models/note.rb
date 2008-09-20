@@ -1,5 +1,7 @@
 class Note < ActiveRecord::Base
 
+  has_many :comments
+  
   def self.max_summary_length() 250; end
 
   def self.find_by(user_id, type = "deluux")
