@@ -16,7 +16,7 @@ config.action_view.cache_template_extensions         = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
-DELUUX_API_SECRET = "8i5wfdYbzKQAwR6fDBMSrHwsGGNOYU2P"
+DELUUX_API_SECRET = "HiYHNvyn3FsnKQeazBGQzI0bVRMGSTAA"
 
 APP_ID = 10
 DELUUX_LOC = "http://deluux.com/"
