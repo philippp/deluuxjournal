@@ -19,7 +19,6 @@ class NotesController < ApplicationController
 
   def show
     @note = Note.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @note }
@@ -28,7 +27,7 @@ class NotesController < ApplicationController
 
   def new
     @note = Note.new
-    @assets = @fb_session.user_assets_index(:page => 1)
+    @assets = @fb_session.user_assets_index
     @friends = @fb_session.friends_index
 
     respond_to do |format|
@@ -67,7 +66,6 @@ class NotesController < ApplicationController
         else
           flash[:notice] = "Added your entry!"
         end
-        @notes = Note.find_by(params[:dl_sig_owner_user])
         format.html { redirect_to params["dl_sig_root_loc"] }
       else
         format.html { render :action => "new" }
@@ -78,9 +76,14 @@ class NotesController < ApplicationController
   def create_comment
     @comment = Comment.new
     @comment.note_id = params[:note_id]
-    @comment.author_name = params[:author_name]
-    @comment.author_url = params[:author_url]
-    @comment.author_email = params[:author_email]
+    if logged_in?
+      create_comment_user_info
+    else
+      @comment.author_name = params[:author_name]
+      @comment.author_url = params[:author_url]
+      @comment.author_email = params[:author_email]
+    end
+    @comment.user_id = params[:dl_sig_owner_user]
     @comment.content = params[:content]
     respond_to do |format|
       if @comment.save
@@ -89,9 +92,21 @@ class NotesController < ApplicationController
     end
   end
 
+  def create_comment_user_info
+    user_info = @fb_session.users_show(:id => params[:dl_sig_user])
+    @comment.author_name = user_info["display_name"]
+    @comment.author_email = user_info["email"]
+    @comment.author_url = user_info["url"]
+  end
+  
   def destroy_comment
-    if is_owner?
-      @comment = Comment.destroy()
+    @comment = Comment.find(params[:id].to_i)
+    if is_owner? and @comment.user_id.to_i == params[:dl_sig_user].to_i 
+      @comment.destroy
+    end
+    
+    respond_to do |format|
+      format.html { redirect_to "#{params[:dl_sig_root_loc]}/show/#{@comment.note_id}"}
     end
   end
   

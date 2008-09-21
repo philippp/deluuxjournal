@@ -1,0 +1,29 @@
+  [4;36;1mSQL (0.000476)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000551)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000416)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000209)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000195)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000190)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.003349)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000306)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000206)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000195)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to AddUserIdComments (9)
+  [4;35;1mSQL (0.113325)[0m   [0mALTER TABLE comments ADD "user_id" integer[0m
+  [4;36;1mSQL (0.039308)[0m   [0;1mVACUUM[0m
+  [4;35;1mSQL (0.007044)[0m   [0mUPDATE schema_info SET version = 9[0m
+  [4;36;1mSQL (0.000449)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000362)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mPRAGMA index_list(comments)[0m
+  [4;35;1mSQL (0.000456)[0m   [0mPRAGMA index_list(notes)[0m
+  [4;36;1mSQL (0.000340)[0m   [0;1mPRAGMA index_info('index_notes_on_user_id_and_user_type_and_created_at')[0m
+  [4;35;1mSQL (0.000261)[0m   [0mPRAGMA index_info('index_notes_on_user_id_and_user_type')[0m
+  [4;36;1mSQL (0.000181)[0m   [0;1mPRAGMA index_info('index_notes_on_blog_id')[0m
+  [4;35;1mSQL (0.000178)[0m   [0mPRAGMA index_info('index_notes_on_user_id')[0m

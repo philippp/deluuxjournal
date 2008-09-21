@@ -28,7 +28,7 @@ module ApplicationHelper
   end
 
   def logged_in? 
-    params[:dl_sig_user].to_i != 0 
+    params[:dl_sig_user].to_i > 0 
   end
   
 end

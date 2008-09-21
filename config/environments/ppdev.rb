@@ -21,6 +21,8 @@ APP_ID = 6
 DELUUX_LOC = "http://deluux.dev:3000/"
 DELUUXJOURNAL_LOC = "http://deluux.dev:3003/"
 DELUUX_DOMAIN = "deluux.dev"
+
 require 'ruby-debug'
 Debugger.start
+Debugger.settings[:reload_source_on_change] = true
 
