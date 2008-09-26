@@ -13,7 +13,7 @@ module NotesHelper
     (0...row_count).each{ |row_id|
       grid_str += "\t<tr>"
       (0...col_count).each{ |col_id|
-        grid_str += "<td id='ag_#{row_id}_#{col_id}' class='asset_cell'></td>"
+        grid_str += "<td id='ag_#{row_id}_#{col_id}' class='asset_cell' style='padding:1em;'></td>"
       }
       grid_str += "<tr>\n"
     }
@@ -23,18 +23,10 @@ module NotesHelper
 
 
   def render_asset_friend_js(assets, friends)
-   # Generate JS Arrays of Image Assets and Friends -->
-   # myImageList = [ [title, filename], ...] -->
-   # myFriendList = [ [friend_id, "friend_name", [friend_regex_fullname, friend_regex_partialname, ...]], ...] -->
-    rb_array_assets = []; rb_array_friends = []; rb_list_friends_decl = ""
 
-    assets.each do |asset|
-      if asset["title"] and asset["title"].length > 0
-        rb_array_assets << "[\"#{asset["title"]}\", \"#{asset["public_filename"]}\", \"#{asset["public_bigthumb"]}\", \"#{asset["public_thumb"]}\"]"
-      else
-        rb_array_assets << "[\"#{asset["public_filename"].split("/").last}\", \"#{asset["public_filename"]}\", \"#{asset["public_bigthumb"]}\", \"#{asset["public_thumb"]}\"]"
-      end
-    end
+   # myFriendList = [ [friend_id, "friend_name", [friend_regex_fullname, friend_regex_partialname, ...]], ...] -->
+    rb_array_friends = []; rb_list_friends_decl = ""
+
     # <!-- Friend array -->
     ignore_words = ["the", "new", "mail", "admin", "root", "founders", "help"]
 
@@ -47,10 +39,10 @@ module NotesHelper
       rb_array_friends << "friend_#{friend["id"]}"
     end
 
-    js_array_assets = rb_array_assets.join(","); js_array_friends = rb_array_friends.join(",");
+    js_array_friends = rb_array_friends.join(",");
     return "<script type=\"text/javascript\">
   #{ rb_list_friends_decl }
-  //var myImageList = new Array( #{ js_array_assets } );
+
   var myFriendList = new Array( #{ js_array_friends } );
 
   var get_friend_by_id = function(friend_id){
