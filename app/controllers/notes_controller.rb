@@ -47,6 +47,7 @@ class NotesController < ApplicationController
   end
 
   def create
+
     @note = Note.new(params[:note])
     @note.text = params[:text]
     @note.title = params[:title]
@@ -94,7 +95,7 @@ class NotesController < ApplicationController
   end
 
   def create_comment_user_info
-    user_info = @fb_session.users_show(:id => params[:dl_sig_user].to_i)
+    user_info = @fb_session.users_show(:user_id => params[:dl_sig_user].to_i)
     @comment.author_name = user_info["display_name"]
     @comment.author_email = user_info["email"]
     @comment.author_url = user_info["url"]
