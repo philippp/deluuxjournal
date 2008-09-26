@@ -18,8 +18,8 @@
       <div><%= text_field_tag :author_url %></div></div>
   <% end %>
   <div style="padding-top: 2em;">
-    <div class="blog_comment_spacer">Your Comment:</div>
-    <div><%= text_area_tag :content, "", {:cols => 80, :rows => 10, :style => "width: 30em; margin-top: 0em;"} %></div>
+    <div class="blog_comment_spacer" style="font-weight: bolder;">Your Comment:</div>
+    <div><%= text_area_tag :content, "", {:cols => 80, :rows => 5, :style => "width: 30em; margin-top: 0em;"} %></div>
   </div>
   <div><div class="blog_comment_spacer">&nbsp;</div><div><%= submit_tag "Add Comment" %></div></div>
 <% end %>
