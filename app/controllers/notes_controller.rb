@@ -27,7 +27,7 @@ class NotesController < ApplicationController
 
   def new
     @note = Note.new
-    @assets = @fb_session.user_assets_index
+#    @assets = @fb_session.user_assets_index
     @friends = @fb_session.friends_index
 
     respond_to do |format|
@@ -37,7 +37,7 @@ class NotesController < ApplicationController
   end
 
   def edit
-    @assets = @fb_session.user_assets_index
+#    @assets = @fb_session.user_assets_index
     @friends = @fb_session.friends_index
     @note = Note.find(params[:id])
     respond_to do |format|
@@ -60,7 +60,8 @@ class NotesController < ApplicationController
         create_crosspost
         update_app_link
         send_notifications
-
+        create_friend_news
+        
         if @note.title.length > 0
           flash[:notice] = "Added \"#{@note.title}\"!"
         else
@@ -87,13 +88,13 @@ class NotesController < ApplicationController
     @comment.content = params[:content]
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to "#{params[:dl_sig_root_loc]}/show/#{@comment.note_id}"}
+        format.html { redirect_to "#{params[:dl_sig_root_loc]}/"}
       end
     end
   end
 
   def create_comment_user_info
-    user_info = @fb_session.users_show(:id => params[:dl_sig_user])
+    user_info = @fb_session.users_show(:id => params[:dl_sig_user].to_i)
     @comment.author_name = user_info["display_name"]
     @comment.author_email = user_info["email"]
     @comment.author_url = user_info["url"]
@@ -152,11 +153,26 @@ class NotesController < ApplicationController
       ljs.post_entry(params[:title], params[:text])
     end
   end
+  
+  def create_friend_news
+    friend_news_params = { }
+    if @note.title.empty?
+      friend_news_params["friend_news[image_description_1]"] = "a blog entry"
+    else 
+      friend_news_params["friend_news[image_description_1]"] = friend_news_params["friend_news[title]"] = @note.title
+    end
+    friend_news_params["friend_news[image_url_1]"] = "#{params["dl_sig_root_loc"]}/show/#{@note.id}"
+    friend_news_params["friend_news[body]"] = "<a href=\"#{params["dl_sig_root_loc"]}/show/#{@note.id}\">Click to read it</a>"
+
+    friend_news_params["friend_news[target_object]"] = "blog"
+    friend_news_params["friend_news[target_action]"] = "wrote"
+    @fb_session.friend_news_create( friend_news_params )
+  end
 
   def update_app_link
     update_desc_text = @note.summary
     if @note.summary_shortened?
-      update_desc_text += "&nbsp;<span class='read_more'><a href='#{params["dl_sig_root_loc"]}/show/#{@note.id}'>Read all of &quot;#{@note.title}&quot;</a></span><br/>"
+      update_desc_text += "<p><span class='read_more'><a href='#{params["dl_sig_root_loc"]}/show/#{@note.id}'>Read all of &quot;#{@note.title}&quot;</a></span></p>"
     end
     @notes = Note.find_by(params[:dl_sig_owner_user])
     if @notes.size > 1
