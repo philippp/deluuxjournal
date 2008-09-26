@@ -11,16 +11,24 @@
       <div class="text subsection">
         <%= note.text %>
       </div>
-      <div style="float: left; font-style: italic;">
+      <div style="font-style: italic;">
         Written <%= time_ago_in_words(note.created_at) %> ago.
-      </div>
+      </div><br/>
       <div style="float: right; font-weight: bolder; padding-right: 1em;">
-        <%= link_to 'Read' , "#{params[:dl_sig_root_loc]}/show/#{note.id}", {:class => "show"} %>
         <% if is_owner? %>
           <%= link_to 'Edit' , "#{params[:dl_sig_root_loc]}/edit/#{note.id}", {:class => "edit"} %>
           <%= link_to 'Delete', "#{params[:dl_sig_root_loc]}/destroy/#{note.id}", {:class => "destroy"} %>
         <% end %>
       </div>
+      <div>
+	<%= render :partial => "comments/comment_form", :locals => {:note => note, :submit_path => "#{params["dl_sig_root_loc"]}/create_comment"} %><br/>
+	<% if note.comments.size > 0 %>
+	  <div id="comments_list">
+	    <%= render :partial => "comments/comment", :collection => note.comments %>
+	  </div>
+	<% end %>
+      </div>
+
     </div>
     <% end %>
   </div>
